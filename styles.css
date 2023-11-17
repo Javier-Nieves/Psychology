@@ -1,4 +1,87 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
+}
+body{
+  display: flex;
+  flex-direction: column;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vw;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*! Content */
+.content {
+  flex: 1;
+}
+.top-section__photo-container {
+  /* height: 80vh; */
+}
+.top-section__photo {
+  position: absolute;
+  /* height: 100%; */
+  width: 100%;
+  z-index: -1;
+}
+.top-section__entrance-text {
+  height: 90vh;
+  background-color: rgba(250, 235, 215, 0.51);
+  /* -webkit-clip-path: polygon(0 0, 50% 50%, 100% 83%, 0% 98%); */
+  clip-path: polygon(0 0, 40% 0%, 30% 100%, 0% 100%);
+}
+
+/*! header  */
+header {
+  position: relative;
+  background-color: aquamarine;
+  height: 300px;
+}
+.brand {
+  position: absolute;
+  top: 1vh;
+  left: 2vw;
+  padding: 10px;
+}
+.brand__name {
+  font-size: 4vh;
+}
+nav {
+  gap: 2vw;
+}
+.nav-links-container {
+  padding: 35px;
+}
+.nav__socialLinks {
+  position: absolute;
+  top: 3vh;
+  right: 2vw;
+}
+.svg-social-top {
+  fill: rgb(3, 2, 2);
+  width: 2.5vw;
+  height: 2.5vw;
+}
+
+/*! footer */
+footer{
+  background-color: bisque;
+}
+.svg-social {
+  fill: rgb(3, 2, 2);
+  width: 3vw;
+  height: 3vw;
 }
