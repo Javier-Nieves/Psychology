@@ -26,28 +26,59 @@ a {
 
 /*! Content */
 .content {
+  position: inherit;
   flex: 1;
 }
 .top-section__photo-container {
+  position: inherit;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 .top-section__photo {
   position: absolute;
-
-  width: 100%;
+  margin-left: 35%;
+  height: 90%;
   z-index: -1;
 }
-.top-section__entrance-text {
-  height: 90vh;
-  background-color: rgba(250, 235, 215, 0.51);
+.top-section__text-backdrop {
+  height: 100%;
+  background-color: rgba(250, 235, 215, 1);
   /* -webkit-clip-path: polygon(0 0, 50% 50%, 100% 83%, 0% 98%); */
-  clip-path: polygon(0 0, 40% 0%, 30% 100%, 0% 100%);
+  clip-path: polygon(0 0, 50% 0%, 40% 100%, 0% 100%, 80% 100%, 90% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.top-section__text {
+  position: relative;
+  top: 20%;
+  left: 5%;
+}
+
+.top-section__text-big {
+  font-size: 30px;
+}
+.top-section__text-small {
+  font-size: 25px;
+  margin-top: 30px;
+}
+.top-section__contact-btn {
+  background-color: brown;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: antiquewhite;
+  padding: 10px;
+  margin-top: 30px;
+  font-size: 30px;
+}
+.top-section__contact-btn:hover {
+  cursor: pointer;
+  background-color: rgb(119, 7, 7);
 }
 
 /*! header  */
 header {
   position: relative;
   background-color: aquamarine;
-  height: 300px;
+  height: 10%;
 }
 .brand {
   position: absolute;
