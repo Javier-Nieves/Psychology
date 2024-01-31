@@ -31,8 +31,8 @@ a {
   flex: 1;
 }
 .section {
-  position: inherit;
-  height: 100vh;
+  position: relative;
+  height: 90vh;
   width: 100vw;
 }
 /*! top section */
@@ -50,8 +50,9 @@ a {
   /* background-color: rgba(250, 235, 215, 1); */
   /* background: rgb(246,201,25);
   background: linear-gradient(135deg, rgba(246,201,25,1) 43%, rgba(251,75,4,1) 100%); */
-  background: rgb(255,255,255);
-  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(192,192,192,1) 92%);
+  /* background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(192,192,192,1) 92%); */
+  background-color: rgb(252, 247, 237);
   -webkit-clip-path: polygon(0 0, 50% 0%, 40% 100%, 0% 100%, 80% 100%, 90% 0%, 100% 0%, 100% 100%, 0% 100%);
   clip-path: polygon(0 0, 50% 0%, 40% 100%, 0% 100%, 80% 100%, 90% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
@@ -62,42 +63,52 @@ a {
 }
 .top-section__text-big {
   font-size: 30px;
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 700;
 }
 .top-section__text-small {
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 400;
   font-size: 25px;
   margin-top: 30px;
 }
 .top-section__contact-btn {
-  background-color: brown;
+  background-color: rgb(101, 143, 53);
+  /* background: rgb(250,66,40); */
+  /* background: linear-gradient(90deg, rgba(250,66,40,1) 0%, rgba(255,120,26,1) 92%); */
   border: 1px solid black;
   border-radius: 10px;
-  color: antiquewhite;
+  color: rgb(73, 42, 1);
   padding: 10px;
   margin-top: 30px;
   font-size: 30px;
 }
 .top-section__contact-btn:hover {
   cursor: pointer;
-  background-color: rgb(119, 7, 7);
+  background-color: rgb(252, 149, 22);
 }
 
 /*! self info section  */
-.self-section {
-  position: relative;
+.self-section, .values-section, .topics-section, .articles-section {
+  /* position: relative; */
   /* background: rgb(246,201,25); */
   /* background: linear-gradient(45deg, rgba(246,201,25,1) 43%, rgba(251,75,4,1) 100%); */
-  background: rgb(255,255,255);
-  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(208,208,208,1) 49%);
+  /* background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(208,208,208,1) 49%); */
+  background-color: rgb(252, 247, 237);
+}
+.self-section {
+  height: 90vh;
 }
 .self-section__content {
   gap: 2vw;
-  margin: 20px;
+  margin: 10% 20px 20px 20px;
 }
 .self-section__photo {
   width: 40vw;
   border-radius: 20px;
 }
-.self-section__title {
+.self-section__title, .values-section__title, .topics-section__title {
   position: absolute;
   top: 0;
   display: flex;
@@ -105,13 +116,78 @@ a {
   align-items: center;
   width: 100%;
   height: 15%;
-  font-size: 30px;
+  font-size: 70px;
+  font-family: 'Amatic SC', sans-serif;
+  /* font-family: 'IBM Plex Serif', serif; */
+  /* font-family: 'Inter', sans-serif; */
+  /* font-family: 'Lobster', sans-serif; */
+  /* font-family: 'Philosopher', sans-serif; */
+  font-weight: 700;
   background-color: rgb(239, 239, 239);
 }
+.self-section__small-text {
+  font-size: 20px;
+  padding: 50px;
+}
+.self-section__form-btn {
+  background-color: brown;
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  color: aliceblue;
+  padding: 30px;
+  font-size: 20px;
+}
+
+/*! Values section  */
+.values-section {
+  height: 70vh;
+}
+.values-section__title {
+  width: 20%;
+  height: 10%;
+  border-radius: 30px;
+  background-color: transparent;
+}
+.values-section__content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+}
+.values-section__text-container {
+  width: 70%;
+}
+.values-section__text-container > * {
+  font-size: 30px;
+  padding: 30px;
+}
+#lottie-container {
+  width: 30%;
+}
+
+/*! Topics section */
+.topics-section__text-container > * {
+  background-color: bisque;
+  font-size: 30px;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 10px;
+}
+
+/*! Articles section */
+.articles-section__btn-container > *{
+  background-color: bisque;
+  font-size: 30px;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 10px;
+}
+
 /*! header  */
 header {
   position: fixed;
-  background-color: rgba(249, 249, 249, 0.6);
+  /* background-color: rgba(255, 228, 196, 0.4); */
+  background-color: rgba(101, 143, 53, 0.5);
   backdrop-filter: blur(10px);
   /* border-bottom: 1px solid rgb(196, 195, 195); */
   top: 0;
