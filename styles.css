@@ -78,14 +78,15 @@ a {
   /* background: linear-gradient(90deg, rgba(250,66,40,1) 0%, rgba(255,120,26,1) 92%); */
   border: 1px solid black;
   border-radius: 10px;
-  color: rgb(73, 42, 1);
+  color: rgb(252, 251, 250);
   padding: 10px;
   margin-top: 30px;
   font-size: 30px;
 }
 .top-section__contact-btn:hover {
   cursor: pointer;
-  background-color: rgb(252, 149, 22);
+  background-color: rgb(69, 98, 37);
+  box-shadow: 0 0 10px grey;
 }
 
 /*! self info section  */
