@@ -1,5 +1,5 @@
 html {/* disable horizontall scrolling */
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 html, body {
   margin: 0;
@@ -44,7 +44,7 @@ a {
 }
 .top-section__photo {
   position: absolute;
-  margin-left: 40%;
+  margin-left: 44%;
   height: 100%;
   z-index: -1;
 }
@@ -57,10 +57,11 @@ a {
   background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(192,192,192,1) 92%); */
   background-color: rgb(252, 247, 237);
   -webkit-clip-path: polygon(0 0, 50% 0%, 40% 100%, 0% 100%, 80% 100%, 90% 0%, 100% 0%, 100% 100%, 0% 100%);
-  clip-path: polygon(0 0, 50% 0%, 40% 100%, 0% 100%, 80% 100%, 90% 0%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 55% 0%, 45% 100%, 0% 100%,83% 100%, 93% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 .top-section__text {
   position: relative;
+  width: 50%;
   top: 40%;
   left: 5%;
 }
@@ -227,6 +228,12 @@ header {
   top: 1vh;
   left: 2vw;
   padding: 10px;
+  transition: all 0.4s ease-in-out;
+}
+.brand:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  text-shadow: 0 0 2px rgb(255, 255, 255), 0 0 10px gold, 0 0 30px goldenrod;
 }
 .brand__name {
   font-size: 4vh;
@@ -236,16 +243,26 @@ nav {
 }
 .nav-links-container {
   padding: 35px;
+  gap: 28px;
+}
+.link {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+.link:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
 .nav__socialLinks {
   position: absolute;
-  top: 3vh;
-  right: 2vw;
+  top: 25%;
+  right: 3%;
+  gap: 15px;
 }
 .svg-social-top {
   fill: rgb(3, 2, 2);
-  width: 2.5vw;
-  height: 2.5vw;
+  width: 40px;
+  height: 40px;
 }
 
 /*! footer */
