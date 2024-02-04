@@ -1,11 +1,7 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
   // DOM selector:
-  //   const topSection = document.querySelector(".top-section");
-  //   const selfSection = document.querySelector(".self-section");
-  //   const valuesSection = document.querySelector(".values-section");
-  //   const topicsSection = document.querySelector(".topics-section");
-  //   const articlesSection = document.querySelector(".articles-section");
+
   const chaptersArr = [
     document.querySelector(".top-section"),
     document.querySelector(".self-section"),
@@ -13,13 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".topics-section"),
     document.querySelector(".articles-section"),
   ];
-
-  const brandLink = document.querySelector(".brand");
-  const selfLink = document.querySelector(".selfLink");
-  const valuesLink = document.querySelector(".valuesLink");
-  const topicsLink = document.querySelector(".topicsLink");
-  const articlesLink = document.querySelector(".articlesLink");
-  const linksArr = [brandLink, selfLink, valuesLink, topicsLink, articlesLink];
+  const linksArr = [
+    document.querySelector(".brand"),
+    document.querySelector(".selfLink"),
+    document.querySelector(".valuesLink"),
+    document.querySelector(".topicsLink"),
+    document.querySelector(".articlesLink"),
+  ];
   const offset = window.innerHeight * 0.1; // header's height
 
   // create chapter links
@@ -32,6 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     })
   );
+
+  // header style change
+  window.addEventListener("scroll", updateHeaderStyle);
 
   // activate lottie animations
   const animationPath = "/files/therapy.json";
@@ -47,3 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
     path: animationPath,
   });
 });
+
+function updateHeaderStyle() {
+  console.log("go");
+  const header = document.querySelector("header");
+  if (window.scrollY > 0) header.classList.add("scrolled-header");
+  else header.classList.remove("scrolled-header");
+}
