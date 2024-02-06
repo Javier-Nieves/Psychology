@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".values-section"),
     document.querySelector(".topics-section"),
     document.querySelector(".articles-section"),
+    document.querySelector(".contact-section"),
   ];
   const linksArr = [
     document.querySelector(".brand"),
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".valuesLink"),
     document.querySelector(".topicsLink"),
     document.querySelector(".articlesLink"),
+    document.querySelector(".top-section__contact-btn"),
   ];
   const offset = window.innerHeight * 0.1; // header's height
 
@@ -33,23 +35,29 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", updateHeaderStyle);
 
   // activate lottie animations
-  const animationPath = "/files/therapy.json";
-
-  const container = document.getElementById("lottie-container");
-
-  // Load the Lottie animation
-  const animation = lottie.loadAnimation({
-    container: container,
+  const conversationPath = "/files/therapy.json";
+  const treePath = "/files/tree.json";
+  const conversation = document.getElementById("lottie-conversation");
+  const tree = document.getElementById("lottie-tree");
+  // Load the Lottie animations
+  lottie.loadAnimation({
+    container: conversation,
     renderer: "svg",
     loop: true,
     autoplay: true,
-    path: animationPath,
+    path: conversationPath,
   });
-});
+  lottie.loadAnimation({
+    container: tree,
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: treePath,
+  });
 
-function updateHeaderStyle() {
-  console.log("go");
-  const header = document.querySelector("header");
-  if (window.scrollY > 0) header.classList.add("scrolled-header");
-  else header.classList.remove("scrolled-header");
-}
+  function updateHeaderStyle() {
+    const header = document.querySelector("header");
+    if (window.scrollY > 0) header.classList.add("scrolled-header");
+    else header.classList.remove("scrolled-header");
+  }
+});
