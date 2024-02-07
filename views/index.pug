@@ -30,11 +30,12 @@
 
     .flex-column.content
       .section.top-section
-        img(src="img/photo1.jpg" alt="Main photo" class="top-section__photo")
+        img(src="img/5.jpg" alt="Main photo" class="top-section__photo")
         .top-section__text-backdrop
           .top-section__text
-            .top-section__text-big Когнитивно - Поведенческая Терапия
-            .top-section__text-small Это круто. И помогает людям!
+            .top-section__text-big Практикующий психолог
+            .top-section__text-small Когнитивно-поведенческая терапия
+            .top-section__text-small Для взрослых и подростков
             button.top-section__contact-btn Хочу на консультацию
             //- <!-- <div id="lottie-tree"> -->
 
@@ -85,11 +86,13 @@
 
       .section.flex-column.contact-section
         .contact-section__title Напишите мне:
-        form(id="contact-form" class="flex-column")
-          input(type="text" class="contact-section__input" placeholder="Ваше Имя")
-          input(type="text" class="contact-section__input" placeholder="Ваша Почта")
-          textarea(type="text" class="contact-section__textarea" placeholder="Сообщение")
-          button.contact-section__send-btn Отправить
+        .flex-container.contact-section__container
+          img(src="/img/photo2.jpg" alt="my photo here" class="contact-section__photo")
+          form(id="contact-form" class="flex-column")
+            input(type="text" class="contact-section__input" placeholder="Ваше Имя")
+            input(type="text" class="contact-section__input" placeholder="Ваша Почта")
+            textarea(type="text" class="contact-section__textarea" placeholder="Сообщение")
+            button.contact-section__send-btn Отправить
 
 
     footer.flex-container
