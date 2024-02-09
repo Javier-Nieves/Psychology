@@ -4,12 +4,12 @@
   "description": "Irina Nikolskaia",
   "main": "psychology.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js"
   },
   "author": "Konstantin Nikolskii",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.7",
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
     "html-to-text": "^9.0.5",

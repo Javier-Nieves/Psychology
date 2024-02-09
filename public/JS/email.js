@@ -28,7 +28,6 @@ module.exports = class Email {
 
   async send(template, subject) {
     // render HTML based on the pug template
-    console.log("rendering");
     const html = pug.renderFile(
       path.join(__dirname, "..", "..", `/views/emails/${template}.pug`),
       {
@@ -37,7 +36,6 @@ module.exports = class Email {
         subject,
       }
     );
-    console.log("DONE #1");
     // email options
     const mailOptions = {
       from: this.from,
@@ -48,12 +46,8 @@ module.exports = class Email {
       text: convert(html),
     };
     //create transport, send email
-    console.log("sending #2");
-    // const textTrans = await this.newTransport();
-    console.log("transport ok! _____________________>>>");
     try {
       const info = await this.newTransport().sendMail(mailOptions);
-      console.log("OK!", info);
     } catch (err) {
       console.error("Error sending email:", err);
     }
@@ -64,13 +58,10 @@ module.exports = class Email {
     //   subject: "hello world!",
     //   text: "hello world!",
     // });
-    console.log("done #2!!!!");
   }
 
   async sendWelcome() {
     // 'welcome' - is a pug email template
-    console.log("welcoming");
     await this.send("welcome", "Welcome to the site");
-    console.log("done");
   }
 };

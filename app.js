@@ -7,7 +7,10 @@ const app = express();
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
+// serving static files
 app.use(express.static(path.join(__dirname, "public")));
+// Body parser, reading data from body into req.body
+app.use(express.json({ limit: "10kb" }));
 
 app.use("/", basicRouter);
 
