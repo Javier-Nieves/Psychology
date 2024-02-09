@@ -4,10 +4,10 @@ const pug = require("pug");
 const path = require("path");
 
 module.exports = class Email {
-  constructor(user, url) {
+  constructor(user) {
     this.to = user.email;
     this.firstName = user.name.split(" ")[0];
-    this.url = url;
+    // this.url = url;
     this.from = process.env.EMAIL_FROM;
   }
 

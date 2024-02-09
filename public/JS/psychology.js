@@ -1,7 +1,4 @@
 "use strict";
-// import { handleUserMessage } from "./sender.js";
-
-console.log("working");
 // DOM selector:
 const contactFrom = document.querySelector("#contact-form");
 
@@ -27,7 +24,6 @@ const linksArr = [
 const offset = window.innerHeight * 0.1; // header's height
 linksArr.forEach((link, i) =>
   link.addEventListener("click", () => {
-    console.log("scrolling to:", chaptersArr[i].offsetTop - offset);
     window.scrollTo({
       top: chaptersArr[i].offsetTop - offset,
       behavior: "smooth",
@@ -38,11 +34,11 @@ linksArr.forEach((link, i) =>
 // send contact emails
 contactFrom.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("form filled");
-  const data = new FormData();
-  data.append("name", document.querySelector("#contact-name"));
-  data.append("email", document.querySelector("#contact-email"));
-  data.append("message", document.querySelector("#contact-message"));
+  const data = {
+    name: document.querySelector("#contact-name").value,
+    email: document.querySelector("#contact-email").value,
+    message: document.querySelector("#contact-message").value,
+  };
   handleUserMessage(data);
 });
 
@@ -77,8 +73,8 @@ function updateHeaderStyle() {
 }
 
 async function handleUserMessage(data) {
-  console.log("sending data");
   try {
+    // data field name can't be changed
     const res = await axios({
       method: "POST",
       url: "http://127.0.0.1:3000/",
@@ -86,6 +82,7 @@ async function handleUserMessage(data) {
     });
     if (res.data.status === "success") {
       console.log("email sent");
+      // todo - alert
     }
   } catch (err) {
     console.error("Email sending error", err.message);
