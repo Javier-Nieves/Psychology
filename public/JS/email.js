@@ -5,10 +5,10 @@ const path = require("path");
 
 module.exports = class Email {
   constructor(user) {
-    console.log("from: ", process.env.EMAIL_FROM);
     this.to = user.email;
     this.firstName = user.name.trim().split(" ")[0];
-    // this.url = url;
+    this.fullName = user.name.trim();
+    this.message = user.message;
     this.from = process.env.EMAIL_FROM;
   }
 
@@ -41,14 +41,16 @@ module.exports = class Email {
       path.join(__dirname, "..", "..", `/views/emails/${template}.pug`),
       {
         firstName: this.firstName,
-        url: this.url,
+        fullName: this.fullName,
+        message: this.message,
+        email: this.to,
         subject,
       }
     );
-    // email options
+    // email options (questions are sent to self)
     const mailOptions = {
       from: this.from,
-      to: this.to,
+      to: template === "question" ? this.from : this.to,
       subject,
       html,
       // all html text stripped of it's form (for spam filters and other cases):
@@ -56,7 +58,7 @@ module.exports = class Email {
     };
     //create transport, send email
     try {
-      const info = await this.newTransport().sendMail(mailOptions);
+      await this.newTransport().sendMail(mailOptions);
       //   console.log("message sent to: ", mailOptions.to);
     } catch (err) {
       console.error("Error sending email:", err);
@@ -68,8 +70,7 @@ module.exports = class Email {
     await this.send("welcome", "Welcome to the site");
   }
 
-  //   async sendQuestion() {
-  //     // 'welcome' - is a pug email template
-  //     await this.send("welcome", "Welcome to the site");
-  //   }
+  async sendQuestion() {
+    await this.send("question", "Question from the web page");
+  }
 };
