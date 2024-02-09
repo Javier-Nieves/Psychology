@@ -5,16 +5,25 @@ const path = require("path");
 
 module.exports = class Email {
   constructor(user) {
+    console.log("from: ", process.env.EMAIL_FROM);
     this.to = user.email;
-    this.firstName = user.name.split(" ")[0];
+    this.firstName = user.name.trim().split(" ")[0];
     // this.url = url;
     this.from = process.env.EMAIL_FROM;
   }
 
   newTransport() {
     if (process.env.NODE_ENV === "production") {
-      // sendgrid?
-      return 1;
+      return nodemailer.createTransport({
+        service: "Gmail",
+        host: process.env.GMAIL_HOST,
+        port: process.env.GMAIL_PORT,
+        secure: true,
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_APP_PASS,
+        },
+      });
     }
     return nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -48,20 +57,19 @@ module.exports = class Email {
     //create transport, send email
     try {
       const info = await this.newTransport().sendMail(mailOptions);
+      //   console.log("message sent to: ", mailOptions.to);
     } catch (err) {
       console.error("Error sending email:", err);
     }
-
-    // await this.newTransport().sendMail({
-    //   from: "xxx@gmail.com",
-    //   to: "xxx@gmail.com",
-    //   subject: "hello world!",
-    //   text: "hello world!",
-    // });
   }
 
   async sendWelcome() {
     // 'welcome' - is a pug email template
     await this.send("welcome", "Welcome to the site");
   }
+
+  //   async sendQuestion() {
+  //     // 'welcome' - is a pug email template
+  //     await this.send("welcome", "Welcome to the site");
+  //   }
 };

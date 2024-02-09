@@ -11,6 +11,8 @@ exports.message = async (req, res) => {
   };
   // send Welcome email
   await new Email(newUser).sendWelcome();
+  // send Question email
+  // await new Email(newUser).sendQuestion();
 
   res.status(200).json({ status: "success" });
 };
