@@ -1,9 +1,17 @@
 extends baseEmail
 
 block content
-  .backdrop
-    .
-    div You Have a New Question
-    div From: #{fullName}
-    div Email: #{email}
-    div Message: #{message}
+  .flex-container.backdrop 
+    .flex-column.letter__content 
+      .letter__title You Have a New Question
+      .flex-container.letter__line-container 
+        .letter__text-line.left From:
+        .letter__text-line.right #{fullName}
+
+      .flex-container.letter__line-container 
+        .letter__text-line.left Email:
+        .letter__text-line.right #{email}
+
+      .flex-container.letter__line-container 
+        .letter__text-line.left Message:
+        .letter__text-line.right #{message}
