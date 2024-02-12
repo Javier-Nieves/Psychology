@@ -1,6 +1,9 @@
 "use strict";
 // DOM selector:
-const contactFrom = document.querySelector("#contact-form");
+const contactForm = document.querySelector("#contact-form");
+const contactFormName = document.querySelector("#contact-name");
+const contactFormEmail = document.querySelector("#contact-email");
+const contactFormMessage = document.querySelector("#contact-message");
 
 const chaptersArr = [
   document.querySelector(".top-section"),
@@ -32,13 +35,14 @@ linksArr.forEach((link, i) =>
 );
 
 // send contact emails
-contactFrom.addEventListener("submit", (e) => {
+contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const data = {
-    name: document.querySelector("#contact-name").value,
-    email: document.querySelector("#contact-email").value,
-    message: document.querySelector("#contact-message").value,
+    name: contactFormName.value,
+    email: contactFormEmail.value,
+    message: contactFormMessage.value,
   };
+  cleanQuestionform();
   handleUserMessage(data);
 });
 
@@ -48,8 +52,11 @@ window.addEventListener("scroll", updateHeaderStyle);
 // activate lottie animations
 const conversationPath = "/files/therapy.json";
 const treePath = "/files/tree.json";
-const conversation = document.getElementById("lottie-conversation");
-const tree = document.getElementById("lottie-tree");
+const loaderPath = "/files/loader.json";
+
+const conversation = document.querySelector("#lottie-conversation");
+const tree = document.querySelector("#lottie-tree");
+const loader = document.querySelector(".contact-section__loader");
 // Load the Lottie animations
 lottie.loadAnimation({
   container: conversation,
@@ -65,6 +72,13 @@ lottie.loadAnimation({
   autoplay: true,
   path: treePath,
 });
+lottie.loadAnimation({
+  container: loader,
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: loaderPath,
+});
 
 function updateHeaderStyle() {
   const header = document.querySelector("header");
@@ -74,6 +88,7 @@ function updateHeaderStyle() {
 
 async function handleUserMessage(data) {
   try {
+    showLoader(true);
     // data field name can't be changed
     const res = await axios({
       method: "POST",
@@ -81,10 +96,43 @@ async function handleUserMessage(data) {
       data,
     });
     if (res.data.status === "success") {
-      console.log("email sent");
-      // todo - alert
+      planeAnimation();
     }
   } catch (err) {
     console.error("Email sending error", err.message);
+  } finally {
+    showLoader(false);
   }
+}
+
+function cleanQuestionform() {
+  contactFormName.value = "";
+  contactFormEmail.value = "";
+  contactFormMessage.value = "";
+}
+
+function planeAnimation() {
+  const planePath = "/files/plane9.json";
+  const planeBox = document.querySelector(".message-plane");
+  const container = document.createElement("div");
+  container.id = "lottie-plane";
+  planeBox.insertAdjacentElement("afterBegin", container);
+  const animation = lottie.loadAnimation({
+    container,
+    renderer: "svg",
+    loop: false,
+    autoplay: true,
+    path: planePath,
+  });
+  animation.addEventListener("complete", () =>
+    // Remove the Lottie container from the DOM
+    container.remove()
+  );
+}
+
+function showLoader(bool) {
+  const btn = document.querySelector(".contact-section__send-btn");
+  const loader = document.querySelector(".contact-section__loader");
+  btn.style.display = bool ? "none" : "block";
+  loader.style.display = bool ? "block" : "none";
 }
