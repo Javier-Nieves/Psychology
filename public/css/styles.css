@@ -90,8 +90,8 @@ a {
   transition: all 0.2s ease-in-out;
   box-shadow: 0 0 10px rgb(197, 197, 197);
 }
-.contact-section__send-btn, .contact-section__loader {
-  width: 40%;
+.top-section__contact-btn {
+  margin-top: 30px;
 }
 .top-section__contact-btn:hover, .contact-section__send-btn:hover {
   cursor: pointer;
@@ -139,7 +139,7 @@ a {
 }
 .self-section__small-text {
   font-size: 20px;
-  padding: 50px;
+  padding: 5px;
 }
 .self-section__form-btn {
   background-color: brown;
@@ -253,6 +253,9 @@ a {
 .message-plane {
   position: absolute;
   width: 30%;
+}
+.contact-section__send-btn, .contact-section__loader {
+  width: 40%;
 }
 .contact-section__loader {
   display: none;
