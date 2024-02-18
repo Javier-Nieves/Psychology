@@ -67,14 +67,14 @@ a {
   left: 5%;
 }
 .top-section__text-big {
-  font-size: 30px;
+  font-size: 50px;
   font-family: 'Philosopher', sans-serif;
   font-weight: 700;
 }
 .top-section__text-small {
   font-family: 'Philosopher', sans-serif;
   font-weight: 400;
-  font-size: 25px;
+  font-size: 30px;
   margin-top: 30px;
 }
 .top-section__contact-btn, .contact-section__send-btn, .contact-section__loader {
@@ -99,7 +99,11 @@ a {
   box-shadow: 0 0 10px rgb(197, 197, 197);
   /* transform: scale(1.01); */
 }
-
+.lottie-leaves {
+  position: absolute;
+  margin-left: 10%;
+  height: 100%;
+}
 /*! self info section  */
 .self-section, .values-section, .topics-section, .articles-section {
   /* position: relative; */
@@ -311,12 +315,14 @@ nav {
 }
 .link {
   font-size: 20px;
+  color: rgb(132, 132, 132);
   font-family: 'Philosopher', sans-serif;
   transition: all 0.3s ease-in-out;
 }
 .link:hover {
   cursor: pointer;
-  transform: scale(1.05);
+  color: black;
+  transform: scale(1.02);
 }
 .nav__socialLinks {
   position: absolute;

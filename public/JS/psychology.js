@@ -50,40 +50,56 @@ contactForm.addEventListener("submit", (e) => {
 window.addEventListener("scroll", updateHeaderStyle);
 
 // activate lottie animations
-const conversationPath = "/files/therapy.json";
-const treePath = "/files/tree.json";
-const loaderPath = "/files/loader.json";
-
-const conversation = document.querySelector("#lottie-conversation");
-const tree = document.querySelector("#lottie-tree");
-const loader = document.querySelector(".contact-section__loader");
+const lottieArr = ["therapy", "tree", "loader", "leaf"];
+const lottieContArr = [
+  document.querySelector("#lottie-conversation"),
+  document.querySelector("#lottie-tree"),
+  document.querySelector(".contact-section__loader"),
+  document.querySelector(".lottie-leaves"),
+];
 // Load the Lottie animations
-lottie.loadAnimation({
-  container: conversation,
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: conversationPath,
+lottieContArr.forEach((container, i) => {
+  lottie.loadAnimation({
+    container: container,
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: `/files/${lottieArr[i]}.json`,
+  });
 });
-lottie.loadAnimation({
-  container: tree,
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: treePath,
-});
-lottie.loadAnimation({
-  container: loader,
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: loaderPath,
-});
+
+// lottie.loadAnimation({
+//   container: tree,
+//   renderer: "svg",
+//   loop: true,
+//   autoplay: true,
+//   path: treePath,
+// });
+// lottie.loadAnimation({
+//   container: loader,
+//   renderer: "svg",
+//   loop: true,
+//   autoplay: true,
+//   path: loaderPath,
+// });
+// lottie.loadAnimation({
+//   container: leaves,
+//   renderer: "svg",
+//   loop: true,
+//   autoplay: true,
+//   path: leavesPath,
+// });
 
 function updateHeaderStyle() {
   const header = document.querySelector("header");
-  if (window.scrollY > 0) header.classList.add("scrolled-header");
-  else header.classList.remove("scrolled-header");
+  const links = document.querySelectorAll(".link");
+  if (window.scrollY > 0) {
+    header.classList.add("scrolled-header");
+    links.forEach((link) => (link.style.color = "black"));
+  } else {
+    header.classList.remove("scrolled-header");
+    links.forEach((link) => (link.style.color = "rgb(132, 132, 132)"));
+  }
 }
 
 async function handleUserMessage(data) {
@@ -112,7 +128,7 @@ function cleanQuestionform() {
 }
 
 function planeAnimation() {
-  const planePath = "/files/plane9.json";
+  const planePath = "/files/plane.json";
   const planeBox = document.querySelector(".message-plane");
   const container = document.createElement("div");
   container.id = "lottie-plane";
