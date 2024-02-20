@@ -255,8 +255,12 @@ a {
 }
 
 /*! Articles section */
+.articles-section__btn-container {
+  flex: 1;
+  flex-wrap: wrap;
+}
 .articles-section__btn-container > * {
-  width: 23%;
+  width: 40%;
   background-color: bisque;
   font-size: 30px;
   padding: 15px;
@@ -265,6 +269,32 @@ a {
 }
 .articles-section__btn-text {
   text-align: center;
+}
+.articles-section__price-wrapper {
+  margin: 20px;
+  padding: 20px;
+  width: 40%;
+}
+.articles-section__price-block {
+  width: 85%;
+  height: 50%;
+  background-color: rgba(101, 143, 53, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.articles-section__price-block > * {
+  text-align: center;
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 400;
+}
+.articles-section__price-title {
+  font-size: 35px;
+  padding-bottom: 30px;
+  font-weight: 700;
+}
+.articles-section__price-text {
+  font-size: 25px;
 }
 
 /*! Contact Section */
