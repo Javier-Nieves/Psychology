@@ -68,28 +68,6 @@ lottieContArr.forEach((container, i) => {
   });
 });
 
-// lottie.loadAnimation({
-//   container: tree,
-//   renderer: "svg",
-//   loop: true,
-//   autoplay: true,
-//   path: treePath,
-// });
-// lottie.loadAnimation({
-//   container: loader,
-//   renderer: "svg",
-//   loop: true,
-//   autoplay: true,
-//   path: loaderPath,
-// });
-// lottie.loadAnimation({
-//   container: leaves,
-//   renderer: "svg",
-//   loop: true,
-//   autoplay: true,
-//   path: leavesPath,
-// });
-
 function updateHeaderStyle() {
   const header = document.querySelector("header");
   const links = document.querySelectorAll(".link");
@@ -128,6 +106,7 @@ function cleanQuestionform() {
 }
 
 function planeAnimation() {
+  // play the plane animation when a letter is sent
   const planePath = "/files/plane.json";
   const planeBox = document.querySelector(".message-plane");
   const container = document.createElement("div");
