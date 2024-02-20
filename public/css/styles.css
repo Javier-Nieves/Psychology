@@ -181,20 +181,21 @@ a {
 }
 .values-column {
   width: 80%;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
 }
 .values-section__content {
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: row;
-  margin: 30px;
-  width: 100%;
+  margin: 8% 0 30px 0;
 }
 
 .values-section__wrapper {
-  width: 80%;
-  justify-content: flex-start;
+  width: 92%;
+  /* padding-left: 5%; */
   padding-bottom: 20px;
+  justify-content: flex-start;
 }
 .value-point {
   width: 50px;
@@ -204,7 +205,7 @@ a {
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  padding-left: 30px;
+  padding-left: 15px;
 }
 .values-section__value-container > * {
   font-size: 25px;
@@ -220,6 +221,9 @@ a {
 }
 .values-section__value-text {
   width: 100%;
+}
+#lottie-conversation {
+  padding-right: 20px;
 }
 
 /*! Topics section */
@@ -251,7 +255,8 @@ a {
 }
 
 /*! Articles section */
-.articles-section__btn-container > *{
+.articles-section__btn-container > * {
+  width: 23%;
   background-color: bisque;
   font-size: 30px;
   padding: 15px;
