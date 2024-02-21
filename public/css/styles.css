@@ -111,15 +111,16 @@ a {
   /* background: linear-gradient(45deg, rgba(246,201,25,1) 43%, rgba(251,75,4,1) 100%); */
   /* background: rgb(255,255,255);
   background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(208,208,208,1) 49%); */
-  background-color: rgb(252, 247, 237);
+  /* background-color: rgb(245, 255, 233); */
+  background-color: rgba(216, 252, 174, 0.3);
 }
 .self-section {
   /* height: 90vh; */
 }
 .self-section__content {
   gap: 2vw;
-  margin-top: 10%;
-  margin-bottom: 50px;
+  margin-top: 7%;
+  margin-bottom: 20px;
 }
 .self-section__photo {
   width: 40vw;
@@ -134,17 +135,23 @@ a {
   width: 100%;
   height: 15%;
   font-size: 60px;
-  /* font-family: 'Amatic SC', sans-serif; */
-  /* font-family: 'IBM Plex Serif', serif; */
-  /* font-family: 'Inter', sans-serif; */
-  /* font-family: 'Lobster', sans-serif; */
+  /* color: rgb(43, 73, 25); */
+  background-image: linear-gradient(90deg, rgb(43, 73, 25), #6bac2b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: 'Philosopher', sans-serif;
   font-weight: 400;
-  background-color: rgb(239, 239, 239);
+  /* background-color: rgba(149, 190, 91, 1); */
+  /* background: rgb(187,219,113);
+  background: linear-gradient(90deg, rgba(187,219,113,1) 0%, rgba(122,157,72,1) 92%); */
+}
+.self-section__title {
+  margin-top: 10px;
 }
 .self-section__text-container {
   padding: 10px;
-  width: 80%;
+  width: 73%;
 }
 .self-section__small-text {
   width: 100%;
@@ -177,18 +184,21 @@ a {
   width: 50%;
   height: 10%;
   border-radius: 30px;
-  background-color: transparent;
 }
 .values-column {
   width: 80%;
   /* justify-content: flex-start; */
 }
 .values-section__content {
-  width: 100%;
+  width: 80%;
   position: relative;
   display: flex;
   flex-direction: row;
   margin: 8% 0 30px 0;
+  background-color: rgba(185, 116, 249, 0.3);
+  /* border: 1px solid grey; */
+  border-radius: 25px;
+  padding: 20px;
 }
 
 .values-section__wrapper {
@@ -208,10 +218,10 @@ a {
   padding-left: 15px;
 }
 .values-section__value-container > * {
-  font-size: 25px;
+  font-size: 22px;
   font-family: 'Philosopher', sans-serif;
   font-weight: 400;
-  text-align: justify;
+  /* text-align: justify; */
 }
 .values-section__value-title {
   width: 100%;
@@ -228,7 +238,7 @@ a {
 
 /*! Topics section */
 .topics-section__title {
-  background-color: beige;
+
 }
 .topics-section__content {
   width: 100%;
@@ -362,7 +372,7 @@ header {
 }
 .scrolled-header {
   /* border-bottom: 1px solid rgb(196, 195, 195); */
-  background-color: rgba(101, 143, 53, 0.2);
+  background-color: rgba(216, 252, 174, 0.5);
   backdrop-filter: blur(10px);
 }
 .brand {
