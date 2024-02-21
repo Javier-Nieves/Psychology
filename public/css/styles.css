@@ -112,7 +112,8 @@ a {
   /* background: rgb(255,255,255);
   background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(208,208,208,1) 49%); */
   /* background-color: rgb(245, 255, 233); */
-  background-color: rgba(216, 252, 174, 0.3);
+  /* background-color: rgba(216, 252, 174, 0.3); */
+  background-color: rgb(241, 254, 225);
 }
 .self-section {
   /* height: 90vh; */
@@ -126,7 +127,7 @@ a {
   width: 40vw;
   border-radius: 20px;
 }
-.self-section__title, .values-section__title, .topics-section__title, .contact-section__title {
+.self-section__title, .values-section__title, .contact-section__title, .topics-section__title {
   position: absolute;
   top: 0;
   display: flex;
@@ -135,16 +136,14 @@ a {
   width: 100%;
   height: 15%;
   font-size: 60px;
-  /* color: rgb(43, 73, 25); */
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 400;
+}
+.self-section__title, .values-section__title, .contact-section__title {
   background-image: linear-gradient(90deg, rgb(43, 73, 25), #6bac2b);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: 'Philosopher', sans-serif;
-  font-weight: 400;
-  /* background-color: rgba(149, 190, 91, 1); */
-  /* background: rgb(187,219,113);
-  background: linear-gradient(90deg, rgba(187,219,113,1) 0%, rgba(122,157,72,1) 92%); */
 }
 .self-section__title {
   margin-top: 10px;
@@ -183,7 +182,6 @@ a {
 .values-section__title {
   width: 50%;
   height: 10%;
-  border-radius: 30px;
 }
 .values-column {
   width: 80%;
@@ -194,11 +192,11 @@ a {
   position: relative;
   display: flex;
   flex-direction: row;
-  margin: 8% 0 30px 0;
+  margin: 100px 0 40px 0;
   background-color: rgba(185, 116, 249, 0.3);
   /* border: 1px solid grey; */
   border-radius: 25px;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 .values-section__wrapper {
@@ -237,8 +235,23 @@ a {
 }
 
 /*! Topics section */
+.topics-section {
+  background-color: transparent;
+}
+.topics-section__backdrop-img {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  z-index: -2;
+  background-image: url(/img/forest2.jpg);
+  filter:contrast(20%);
+  transform: translate3d(0, 0, 0);
+}
 .topics-section__title {
-
+  color: aliceblue;
+  
 }
 .topics-section__content {
   width: 100%;
@@ -309,7 +322,7 @@ a {
 
 /*! Contact Section */
 .contact-section {
-  background-color: rgba(97, 192, 97, 0.183);
+  background-color: rgb(252, 247, 237);
 }
 .contact-section__container {
   gap: 5vw;
