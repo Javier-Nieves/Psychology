@@ -50,8 +50,6 @@ contactForm.addEventListener("submit", (e) => {
 window.addEventListener("scroll", updateHeaderStyle);
 // add parallax to the Topics section
 window.addEventListener("scroll", handleParallax);
-// stop scroll when footer is fully visible
-window.addEventListener("scroll", limitScroll, { passive: false });
 
 // activate lottie animations
 const lottieArr = ["therapy", "tree", "loader", "leaf"];
@@ -138,27 +136,8 @@ function showLoader(bool) {
 
 function handleParallax() {
   const parallaxMain = document.querySelector(".top-section__photo");
-  const parallaxForest = document.querySelector(
-    ".topics-section__backdrop-img"
-  );
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
   // parallax effect coefficient
   const parallaxOffset = scrollTop / 12;
   parallaxMain.style.transform = `translateY(${parallaxOffset}px)`;
-  parallaxForest.style.transform = `translateY(${scrollTop}px)`;
-}
-
-function limitScroll(event) {
-  const footer = document.querySelector("footer");
-  const scrollPosition = window.scrollY;
-  const windowHeight = window.innerHeight;
-  const footerOffset = footer.offsetTop;
-  const footerHeight = footer.offsetHeight;
-  const bottomLimit = footerOffset + footerHeight - windowHeight;
-
-  if (scrollPosition >= bottomLimit) {
-    window.scrollTo(0, bottomLimit);
-    event.preventDefault();
-    console.log("STOP!");
-  }
 }

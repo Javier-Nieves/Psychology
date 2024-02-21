@@ -246,19 +246,37 @@ a {
   height: 200%;
   z-index: -2;
   background-image: url(/img/forest2.jpg);
-  filter:contrast(20%);
-  transform: translate3d(0, 0, 0);
+  /* this makes image stick to back and create parallax: */
+  background-attachment: fixed;
+  filter:brightness(40%);
+  filter:contrast(40%);
 }
 .topics-section__title {
-  color: aliceblue;
-  
+  color: white;
+}
+.topics-section__wrapper {
+  width: 100%;
+  margin-top: 10%;
 }
 .topics-section__content {
+  margin-top: 10%;
   width: 100%;
   gap: 1.5vw;
-  margin-top: 20%;
   align-items: baseline;
 }
+.topics-section__buttons {
+  /* background-color: rgb(31, 31, 31); */
+  /* border-radius: 10px; */
+  height: 40px;
+  padding: 10px;
+}
+.topics-section__checkText {
+  color: white;
+  font-size: 20px;
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 400;
+}
+
 .topics-section__topic-container {
   width: 22%;
   height: 50%;
@@ -455,4 +473,42 @@ footer{
   font-size: 18px;
   font-family: 'Philosopher', sans-serif;
   font-weight: 400;
+}
+
+/* ---------------------------toggle switch in topics--------------------------------- */
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+  font-weight: 700;
+  font-size: 4rem;
+  color: rgb(9, 97, 8);
+}
+.toggle__switch {
+  --bg-toggle: rgb(255, 255, 255);
+  --bg-circle: rgb(9, 97, 8);
+  height: 55px;
+  width: 120px;
+  background-color: var(--bg-toggle);
+  border-radius: 4rem;
+  display: flex;
+  align-items: center;
+  padding: 0 .5rem;
+  cursor: pointer;
+  transition: background-color 500ms;
+}
+.toggle__circle {
+  width: 35px;
+  height: 35px;
+  background-color: var(--bg-circle);
+  border-radius: 50%;
+  transition: margin 400ms ease-in-out, background-color 1000ms;
+}
+#checkbox:checked + .toggle .toggle__circle {
+  margin-left: 82px;
+}
+#checkbox:checked + .toggle > .toggle__switch {
+  --bg-toggle: rgb(9, 97, 8);
+  --bg-circle: rgb(245, 245, 245);
+  /* box-shadow: 0 .3rem 5rem 0 hsla(96, 85%, 34%, 30%); */
 }
