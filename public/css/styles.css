@@ -265,18 +265,32 @@ a {
   align-items: baseline;
 }
 .topics-section__buttons {
-  /* background-color: rgb(31, 31, 31); */
-  /* border-radius: 10px; */
+  /* background-color: rgba(128, 128, 128, 0.635); */
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(251,221,58,0.2) 100%);
+  border-radius: 25px;
   height: 40px;
   padding: 10px;
+  transition: all 0.5s ease-in-out;
+}
+.changed-backgroud {
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(251,221,58,0.2) 0%, rgba(255,255,255,1) 100%);
 }
 .topics-section__checkText {
-  color: white;
+  color: rgb(65, 65, 65);
   font-size: 20px;
   font-family: 'Philosopher', sans-serif;
   font-weight: 400;
+  transition: all 0.5s;
+  margin: 0 20px 0 20px;
 }
-
+.checked {
+  /* transform: scale(1.05); */
+  /* font-size: 25px; */
+  color: black;
+  text-shadow: 0 0 10px gold;
+}
 .topics-section__topic-container {
   width: 22%;
   height: 50%;
@@ -485,10 +499,10 @@ footer{
   color: rgb(9, 97, 8);
 }
 .toggle__switch {
-  --bg-toggle: rgb(255, 255, 255);
+  --bg-toggle: rgba(255, 255, 255, 0.8);
   --bg-circle: rgb(9, 97, 8);
-  height: 55px;
-  width: 120px;
+  height: 45px;
+  width: 90px;
   background-color: var(--bg-toggle);
   border-radius: 4rem;
   display: flex;
@@ -505,7 +519,7 @@ footer{
   transition: margin 400ms ease-in-out, background-color 1000ms;
 }
 #checkbox:checked + .toggle .toggle__circle {
-  margin-left: 82px;
+  margin-left: 54px;
 }
 #checkbox:checked + .toggle > .toggle__switch {
   --bg-toggle: rgb(9, 97, 8);

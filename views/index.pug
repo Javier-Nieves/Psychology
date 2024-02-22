@@ -5,6 +5,11 @@ mixin valueBlock(title, text)
       .values-section__value-title= title
       .values-section__value-text= text
 
+mixin topicBlock(text)
+  .flex-column.topics-section__topic-container
+    img(src="/img/problem.png" class="topics-section__topic-pic")
+    .topics-section__topic-text= text 
+
 doctype html
 html
   head
@@ -79,15 +84,14 @@ html
         .topics-section__title С чем я помогаю
         .flex-column.topics-section__wrapper
           .flex-container.topics-section__buttons
-            <input type="checkbox" name="check-toggle" id="checkbox" hidden="">
-            <label for="checkbox" class="toggle">
-              .topics-section__checkText Я взрослый
-              <div class="toggle__switch">
-                <div class="toggle__circle"></div>
-              </div>
-              .topics-section__checkText Я подросток
-            </label>
+            input(type="checkbox" name="check-toggle" id="checkbox" hidden="")
+            label(for="checkbox" class="toggle")
+              .topics-section__checkText.parent.checked Я взрослый
+              .toggle__switch
+                .toggle__circle
+              .topics-section__checkText.teen Я подросток
           .flex-container.topics-section__content
+            +topicBlock('Тревожность')
             .flex-column.topics-section__topic-container
               img(src="/img/problem.png" class="topics-section__topic-pic")
               .topics-section__topic-text Тревожность 

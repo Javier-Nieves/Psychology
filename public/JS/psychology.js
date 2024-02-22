@@ -70,6 +70,10 @@ lottieContArr.forEach((container, i) => {
   });
 });
 
+// add Parent - Teenager toggle switch handler
+const checkbox = document.querySelector("#checkbox");
+checkbox.addEventListener("change", changeTopics);
+
 function updateHeaderStyle() {
   const header = document.querySelector("header");
   const links = document.querySelectorAll(".link");
@@ -140,4 +144,13 @@ function handleParallax() {
   // parallax effect coefficient
   const parallaxOffset = scrollTop / 12;
   parallaxMain.style.transform = `translateY(${parallaxOffset}px)`;
+}
+
+function changeTopics() {
+  const parent = document.querySelector(".parent");
+  const teen = document.querySelector(".teen");
+  const background = document.querySelector(".topics-section__buttons");
+  background.classList.toggle("changed-backgroud");
+  parent.classList.toggle("checked");
+  teen.classList.toggle("checked");
 }
