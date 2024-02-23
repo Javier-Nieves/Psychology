@@ -4,6 +4,7 @@ const contactForm = document.querySelector("#contact-form");
 const contactFormName = document.querySelector("#contact-name");
 const contactFormEmail = document.querySelector("#contact-email");
 const contactFormMessage = document.querySelector("#contact-message");
+const topicsTitle = document.querySelector(".topics-section__title");
 
 const chaptersArr = [
   document.querySelector(".top-section"),
@@ -71,8 +72,7 @@ lottieContArr.forEach((container, i) => {
 });
 
 // add Parent - Teenager toggle switch handler
-const checkbox = document.querySelector("#checkbox");
-checkbox.addEventListener("change", changeTopics);
+topicsTitle.addEventListener("click", changeTopics);
 
 function updateHeaderStyle() {
   const header = document.querySelector("header");
@@ -147,10 +147,11 @@ function handleParallax() {
 }
 
 function changeTopics() {
-  const parent = document.querySelector(".parent");
-  const teen = document.querySelector(".teen");
-  const background = document.querySelector(".topics-section__buttons");
-  background.classList.toggle("changed-backgroud");
-  parent.classList.toggle("checked");
-  teen.classList.toggle("checked");
+  const titleTextPart = document.querySelector(".title-switch");
+  titleTextPart.innerHTML =
+    titleTextPart.innerHTML == "взрослым" ? "подросткам" : "взрослым";
+  const adultTopics = document.querySelector(".adult");
+  const teenTopics = document.querySelector(".teen");
+  adultTopics.classList.toggle("hidden");
+  teenTopics.classList.toggle("hidden");
 }

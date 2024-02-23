@@ -198,7 +198,6 @@ a {
   border-radius: 25px;
   padding: 40px 20px;
 }
-
 .values-section__wrapper {
   width: 92%;
   /* padding-left: 5%; */
@@ -245,68 +244,69 @@ a {
   width: 100%;
   height: 200%;
   z-index: -2;
-  background-image: url(/img/forest2.jpg);
+  background-image: url(/img/backTopics.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
   /* this makes image stick to back and create parallax: */
   background-attachment: fixed;
-  filter:brightness(40%);
-  filter:contrast(40%);
+  filter:brightness(70%);
+  filter:contrast(70%);
 }
 .topics-section__title {
   color: white;
+  height: 17%;
+}
+.topics-section__title:hover {
+  cursor: pointer;
 }
 .topics-section__wrapper {
   width: 100%;
-  margin-top: 10%;
+  margin-top: 130px;
 }
 .topics-section__content {
-  margin-top: 10%;
+  margin-bottom: 70px;
   width: 100%;
-  gap: 1.5vw;
   align-items: baseline;
-}
-.topics-section__buttons {
-  /* background-color: rgba(128, 128, 128, 0.635); */
-  background: rgb(255,255,255);
-  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(251,221,58,0.2) 100%);
-  border-radius: 25px;
-  height: 40px;
-  padding: 10px;
-  transition: all 0.5s ease-in-out;
-}
-.changed-backgroud {
-  background: rgb(255,255,255);
-  background: linear-gradient(90deg, rgba(251,221,58,0.2) 0%, rgba(255,255,255,1) 100%);
-}
-.topics-section__checkText {
-  color: rgb(65, 65, 65);
-  font-size: 20px;
-  font-family: 'Philosopher', sans-serif;
-  font-weight: 400;
-  transition: all 0.5s;
-  margin: 0 20px 0 20px;
-}
-.checked {
-  /* transform: scale(1.05); */
-  /* font-size: 25px; */
-  color: black;
-  text-shadow: 0 0 10px gold;
+  flex-wrap: wrap;
 }
 .topics-section__topic-container {
-  width: 22%;
+  width: 30%;
   height: 50%;
   /* padding: 5px; */
 }
 .topics-section__topic-pic {
-  width: 90%;
+  width: 30%;
   border: 1px solid rgb(180, 180, 180);
   border-radius: 10px;
 }
 .topics-section__topic-text {
   padding: 10px;
-  font-size: 35px;
+  font-size: 25px;
+  color: bisque;
   font-family: 'Philosopher', sans-serif;
   font-weight: 400;
   text-align: center;
+}
+.hidden {
+  display: none;
+}
+/* ---------------------------toggle switch in topics--------------------------------- */
+.title-switch {
+  color: whitesmoke;
+  border: 2px solid bisque;
+  background-color: rgba(46, 46, 46, 0.5);
+  border-radius: 15px;
+  padding: 0px 5px 10px 5px;
+  margin-top: 10px;
+  mask-image: linear-gradient(-75deg, rgba(0,0,0,.7) 30%, #000 50%, rgba(0,0,0,.7) 70%);
+  mask-size: 200%;
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.7) 30%, #000 50%, rgba(0,0,0,.7) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 2s linear infinite;
+}
+@keyframes shine {
+  from { -webkit-mask-position: 150%; }
+  to { -webkit-mask-position: -50%; }
 }
 
 /*! Articles section */
@@ -487,42 +487,4 @@ footer{
   font-size: 18px;
   font-family: 'Philosopher', sans-serif;
   font-weight: 400;
-}
-
-/* ---------------------------toggle switch in topics--------------------------------- */
-.toggle {
-  display: flex;
-  align-items: center;
-  gap: .2rem;
-  font-weight: 700;
-  font-size: 4rem;
-  color: rgb(9, 97, 8);
-}
-.toggle__switch {
-  --bg-toggle: rgba(255, 255, 255, 0.8);
-  --bg-circle: rgb(9, 97, 8);
-  height: 45px;
-  width: 90px;
-  background-color: var(--bg-toggle);
-  border-radius: 4rem;
-  display: flex;
-  align-items: center;
-  padding: 0 .5rem;
-  cursor: pointer;
-  transition: background-color 500ms;
-}
-.toggle__circle {
-  width: 35px;
-  height: 35px;
-  background-color: var(--bg-circle);
-  border-radius: 50%;
-  transition: margin 400ms ease-in-out, background-color 1000ms;
-}
-#checkbox:checked + .toggle .toggle__circle {
-  margin-left: 54px;
-}
-#checkbox:checked + .toggle > .toggle__switch {
-  --bg-toggle: rgb(9, 97, 8);
-  --bg-circle: rgb(245, 245, 245);
-  /* box-shadow: 0 .3rem 5rem 0 hsla(96, 85%, 34%, 30%); */
 }

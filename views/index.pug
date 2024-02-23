@@ -81,29 +81,30 @@ html
 
       .section.flex-column.topics-section
         .topics-section__backdrop-img
-        .topics-section__title С чем я помогаю
+        .topics-section__title С чем я помогаю&nbsp;
+          span.title-switch взрослым
         .flex-column.topics-section__wrapper
-          .flex-container.topics-section__buttons
-            input(type="checkbox" name="check-toggle" id="checkbox" hidden="")
-            label(for="checkbox" class="toggle")
-              .topics-section__checkText.parent.checked Я взрослый
-              .toggle__switch
-                .toggle__circle
-              .topics-section__checkText.teen Я подросток
-          .flex-container.topics-section__content
-            +topicBlock('Тревожность')
-            .flex-column.topics-section__topic-container
-              img(src="/img/problem.png" class="topics-section__topic-pic")
-              .topics-section__topic-text Тревожность 
-            .flex-column.topics-section__topic-container
-              img(src="/img/problem.png" class="topics-section__topic-pic")
-              .topics-section__topic-text Депрессия
-            .flex-column.topics-section__topic-container
-              img(src="/img/problem.png" class="topics-section__topic-pic")
-              .topics-section__topic-text Расстройства личности 
-            .flex-column.topics-section__topic-container
-              img(src="/img/problem.png" class="topics-section__topic-pic")
-              .topics-section__topic-text Растроства Пищевого Поведения 
+          //- .flex-container.topics-section__buttons
+          //-   input(type="checkbox" name="check-toggle" id="checkbox" hidden="")
+          //-   label(for="checkbox" class="toggle")
+          //-     .topics-section__checkText.parent.checked Я взрослый
+          //-     .toggle__switch
+          //-       .toggle__circle
+          //-     .topics-section__checkText.teen Я подросток
+          .flex-container.topics-section__content.adult
+            +topicBlock('Прожить кризисный период')
+            +topicBlock('Принять важное решение')
+            +topicBlock('Справиться с профессиональным стрессом, выгоранием')
+            +topicBlock('Наладить отношения с партнером, родителями, детьми')
+            +topicBlock('Повысить самоценность, выстроить границы c другими людьми')
+            +topicBlock('Снизить тревожность и преодолеть другие эмоциональные трудности')
+
+          .flex-container.topics-section__content.teen.hidden
+            +topicBlock('Наладить отношения с родителями, друзьями, учителями')
+            +topicBlock('Решить проблемы в учебе')
+            +topicBlock('Научиться регулировать эмоции')
+            +topicBlock('Сформировать адекватную самооценку')
+            +topicBlock('Адаптироваться к изменениям подросткового возраста')
 
       .section.flex-column.articles-section
         .flex-container
