@@ -51,11 +51,6 @@ a {
 }
 .top-section__text-backdrop {
   height: 100%;
-  /* background-color: rgba(250, 235, 215, 1); */
-  /* background: rgb(246,201,25);
-  background: linear-gradient(135deg, rgba(246,201,25,1) 43%, rgba(251,75,4,1) 100%); */
-  /* background: rgb(255,255,255);
-  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(192,192,192,1) 92%); */
   background-color: rgb(252, 247, 237);
   -webkit-clip-path: polygon(0 0, 50% 0%, 40% 100%, 0% 100%, 80% 100%, 90% 0%, 100% 0%, 100% 100%, 0% 100%);
   clip-path: polygon(0 0, 55% 0%, 45% 100%, 0% 100%,83% 100%, 93% 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -106,13 +101,6 @@ a {
 }
 /*! self info section  */
 .self-section, .values-section, .topics-section, .articles-section {
-  /* position: relative; */
-  /* background: rgb(246,201,25); */
-  /* background: linear-gradient(45deg, rgba(246,201,25,1) 43%, rgba(251,75,4,1) 100%); */
-  /* background: rgb(255,255,255);
-  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(208,208,208,1) 49%); */
-  /* background-color: rgb(245, 255, 233); */
-  /* background-color: rgba(216, 252, 174, 0.3); */
   background-color: rgb(241, 254, 225);
 }
 .self-section {
@@ -249,8 +237,8 @@ a {
   background-size: cover;
   /* this makes image stick to back and create parallax: */
   background-attachment: fixed;
-  filter:brightness(70%);
-  filter:contrast(70%);
+  filter:brightness(60%);
+  filter:contrast(60%);
 }
 .topics-section__title {
   color: white;
@@ -310,6 +298,9 @@ a {
 }
 
 /*! Articles section */
+/* .articles-section {
+  padding: 50px;
+} */
 .articles-section__btn-container {
   flex: 1;
   flex-wrap: wrap;
@@ -332,10 +323,12 @@ a {
 }
 .articles-section__price-block {
   width: 85%;
-  height: 50%;
-  background-color: rgba(101, 143, 53, 0.7);
+  /* height: 100%; */
+  /* background-color: rgba(101, 143, 53, 0.7); */
+  background: rgb(197,255,63);
+  background: linear-gradient(90deg, rgba(43, 73, 25, 0.5), rgba(107, 171, 43, 0.5));
   border-radius: 10px;
-  padding: 20px;
+  padding: 50px 0;
   margin-bottom: 20px;
 }
 .articles-section__price-block > * {
@@ -355,16 +348,25 @@ a {
 /*! Contact Section */
 .contact-section {
   background-color: rgb(252, 247, 237);
+  padding-bottom: 70px;
 }
 .contact-section__container {
-  gap: 5vw;
-  padding-top: 12vh;
+  width: 100%;
+  padding-top: 7%;
+  gap: 20px;
 }
+.contact-section__container > * {
+  padding: 20px;
+}
+/* .contact-section__title {
+  padding: 30px;
+} */
 #contact-form {
   gap: 2vh;
+  width: 40%;
 }
 .contact-section__input, .contact-section__textarea {
-  width: 40vw;
+  width: 100%;
   padding: 15px;
   border: 2px solid rgb(218, 218, 218);
   border-radius: 10px;
@@ -385,8 +387,8 @@ a {
   margin: 0;
 }
 .contact-section__photo {
-  width: 35vw;
-  border-radius: 20px;
+  width: 40%;
+  border-radius: 50px;
 }
 .message-plane {
   position: absolute;

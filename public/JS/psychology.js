@@ -50,7 +50,7 @@ contactForm.addEventListener("submit", (e) => {
 // header style change
 window.addEventListener("scroll", updateHeaderStyle);
 // add parallax to the Topics section
-window.addEventListener("scroll", handleParallax);
+// window.addEventListener("scroll", handleParallax);
 
 // activate lottie animations
 const lottieArr = ["therapy", "tree", "loader", "leaf"];
