@@ -242,20 +242,35 @@ a {
 }
 .topics-section__title {
   color: white;
-  height: 17%;
+  height: 12%;
 }
 .topics-section__title:hover {
   cursor: pointer;
 }
 .topics-section__wrapper {
   width: 100%;
-  margin-top: 130px;
+  margin-top: 30px;
 }
 .topics-section__content {
-  margin-bottom: 70px;
+  margin-bottom: 50px;
   width: 100%;
   align-items: baseline;
   flex-wrap: wrap;
+  transform: translateX(0);
+  transition: all 1s ease-in-out;
+  opacity: 1;
+}
+.adultTopics {
+  position: absolute;
+  left: 0;
+}
+.hidden {
+  /* display: none; */
+  opacity: 0;
+  transform: translateX(-1500px);
+}
+.adultTopics.hidden {
+  transform: translateX(1500px);
 }
 .topics-section__topic-container {
   width: 30%;
@@ -275,26 +290,77 @@ a {
   font-weight: 400;
   text-align: center;
 }
-.hidden {
-  display: none;
-}
-/* ---------------------------toggle switch in topics--------------------------------- */
 .title-switch {
-  color: whitesmoke;
-  border: 2px solid bisque;
-  background-color: rgba(46, 46, 46, 0.5);
+  color: rgb(195, 195, 195);
+  font-size: 32px;
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 400;
   border-radius: 15px;
   padding: 0px 5px 10px 5px;
-  margin-top: 10px;
-  mask-image: linear-gradient(-75deg, rgba(0,0,0,.7) 30%, #000 50%, rgba(0,0,0,.7) 70%);
-  mask-size: 200%;
-  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.7) 30%, #000 50%, rgba(0,0,0,.7) 70%);
+  /* margin-top: 10px; */
+  mask-image: linear-gradient(-75deg, rgba(0,0,0,.9) 30%, #000 50%, rgba(0,0,0,.9) 70%);
+  mask-size: 100%;
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.9) 30%, #000 50%, rgba(0,0,0,.9) 70%);
   -webkit-mask-size: 200%;
+}
+.active-switch {
+  color: bisque;
   animation: shine 2s linear infinite;
 }
 @keyframes shine {
   from { -webkit-mask-position: 150%; }
   to { -webkit-mask-position: -50%; }
+}
+/* ---------------- switch -------------------- */
+.checkbox_mark{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+}
+.checkbox_item .checkbox_wrap{
+	position: relative;
+	display: block;
+	cursor: pointer;
+	/* margin: 110px auto 50px; */
+}
+.checkbox_item {
+  margin-top: 90px;
+}
+.checkbox_inp{
+	position: absolute;
+	opacity: 0;
+}
+.checkbox_item .checkbox_wrap .checkbox_mark{
+	display: inline-block;
+	position: relative;
+	border-radius: 25px;
+}
+.checkbox_mark:before, .checkbox_item .checkbox_wrap .checkbox_mark:after{
+	content: "";
+	position: absolute;
+	transition: all 0.5s ease;
+}
+.checkbox_item.citem_2 .checkbox_wrap .checkbox_mark{
+	border: 5px solid rgba(255, 228, 196, 0.8);
+	width: 90px;
+	height: 40px;
+	padding: 2px;
+}
+.checkbox_item.citem_2 .checkbox_wrap .checkbox_mark:before{
+	top: 2px;
+  left: 2px;
+  width: 34px;
+  height: 26px;
+  background: rgba(255, 228, 196, 0.8);
+  border-radius: 25px;
+}
+.checkbox_item.citem_2 .checkbox_wrap .checkbox_inp:checked ~ .checkbox_mark{
+	border-color: rgba(255, 228, 196, 0.8);
+}
+.checkbox_item.citem_2 .checkbox_wrap .checkbox_inp:checked ~ .checkbox_mark:before{
+	left: 44px;
+	background: rgba(255, 228, 196, 0.8);
 }
 
 /*! Articles section */
@@ -323,8 +389,6 @@ a {
 }
 .articles-section__price-block {
   width: 85%;
-  /* height: 100%; */
-  /* background-color: rgba(101, 143, 53, 0.7); */
   background: rgb(197,255,63);
   background: linear-gradient(90deg, rgba(43, 73, 25, 0.5), rgba(107, 171, 43, 0.5));
   border-radius: 10px;

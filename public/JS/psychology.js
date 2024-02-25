@@ -4,7 +4,7 @@ const contactForm = document.querySelector("#contact-form");
 const contactFormName = document.querySelector("#contact-name");
 const contactFormEmail = document.querySelector("#contact-email");
 const contactFormMessage = document.querySelector("#contact-message");
-const topicsTitle = document.querySelector(".topics-section__title");
+const topicsSwitch = document.querySelector(".checkbox_mark");
 
 const chaptersArr = [
   document.querySelector(".top-section"),
@@ -53,10 +53,9 @@ window.addEventListener("scroll", updateHeaderStyle);
 // window.addEventListener("scroll", handleParallax);
 
 // activate lottie animations
-const lottieArr = ["therapy", "tree", "loader", "leaf"];
+const lottieArr = ["therapy", "loader", "leaf"];
 const lottieContArr = [
   document.querySelector("#lottie-conversation"),
-  document.querySelector("#lottie-tree"),
   document.querySelector(".contact-section__loader"),
   document.querySelector(".lottie-leaves"),
 ];
@@ -72,7 +71,7 @@ lottieContArr.forEach((container, i) => {
 });
 
 // add Parent - Teenager toggle switch handler
-topicsTitle.addEventListener("click", changeTopics);
+topicsSwitch.addEventListener("click", changeTopics);
 
 function updateHeaderStyle() {
   const header = document.querySelector("header");
@@ -92,7 +91,11 @@ async function handleUserMessage(data) {
     // data field name can't be changed
     const res = await axios({
       method: "POST",
-      url: "http://127.0.0.1:3000/",
+      // url:
+      //   process.env.NODE_ENV === "production"
+      //     ? process.env.URL
+      //     : "http://127.0.0.1:3000/",
+      url: "https://nikolskaya.org/",
       data,
     });
     if (res.data.status === "success") {
@@ -147,11 +150,12 @@ function handleParallax() {
 }
 
 function changeTopics() {
-  const titleTextPart = document.querySelector(".title-switch");
-  titleTextPart.innerHTML =
-    titleTextPart.innerHTML == "взрослым" ? "подросткам" : "взрослым";
-  const adultTopics = document.querySelector(".adult");
-  const teenTopics = document.querySelector(".teen");
+  const adultText = document.querySelector(".adult");
+  const teenText = document.querySelector(".teen");
+  const adultTopics = document.querySelector(".adultTopics");
+  const teenTopics = document.querySelector(".teenTopics");
   adultTopics.classList.toggle("hidden");
   teenTopics.classList.toggle("hidden");
+  adultText.classList.toggle("active-switch");
+  teenText.classList.toggle("active-switch");
 }
