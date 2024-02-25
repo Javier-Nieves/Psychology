@@ -181,8 +181,9 @@ a {
   display: flex;
   flex-direction: row;
   margin: 100px 0 40px 0;
-  background-color: rgba(185, 116, 249, 0.3);
-  /* border: 1px solid grey; */
+  /* background-color: rgba(185, 116, 249, 0.3); */
+  background: rgb(238,63,255);
+  background: linear-gradient(90deg, rgba(234, 33, 252, 0.0) 0%, rgba(250, 73, 227, 0.25) 90%);
   border-radius: 25px;
   padding: 40px 20px;
 }
@@ -372,15 +373,19 @@ a {
   flex-wrap: wrap;
 }
 .articles-section__btn-container > * {
-  width: 40%;
-  background-color: bisque;
+  /* width: 40%; */
+  background-color: rgb(250, 231, 255);
   font-size: 30px;
   padding: 15px;
   margin: 15px;
   border-radius: 10px;
 }
-.articles-section__btn-text {
+.articles-section__btn {
   text-align: center;
+  border: none;
+}
+.articles-section__btn:hover {
+  cursor: pointer;
 }
 .articles-section__price-wrapper {
   margin: 20px;
@@ -388,21 +393,23 @@ a {
   width: 40%;
 }
 .articles-section__price-block {
-  width: 85%;
-  background: rgb(197,255,63);
-  background: linear-gradient(90deg, rgba(43, 73, 25, 0.5), rgba(107, 171, 43, 0.5));
+  width: 100%;
+  /* background-color: rgba(185, 116, 249, 0.3); */
+  background: rgba(81, 251, 113, 0.25);
+  background: linear-gradient(90deg, rgba(68, 143, 51, 0.5) 0%, rgba(42, 121, 22, 0.7)100%);
   border-radius: 10px;
-  padding: 50px 0;
+  padding: 25px 0;
   margin-bottom: 20px;
 }
 .articles-section__price-block > * {
   text-align: center;
   font-family: 'Philosopher', sans-serif;
   font-weight: 400;
+  padding: 20px 10px;
 }
 .articles-section__price-title {
   font-size: 35px;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
   font-weight: 700;
 }
 .articles-section__price-text {
@@ -469,6 +476,46 @@ a {
 }
 .contact-section__loader > * {
   height: 64px !important;
+}
+
+/*! Dialog  */
+dialog{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  opacity: 0;
+  scale: 0;
+  transition: all 0.5s;
+  width: 100%;
+  height: 100%;
+  z-index: 80;
+}
+dialog[open] {
+  opacity: 1;
+  scale: 1;
+}
+dialog::backdrop {
+  background-color: rgba(119, 144, 84, 0.5);
+}
+.dialogWindow {
+  width: 60%;
+  height: 80%;
+  background-color: rgba(42, 42, 42, 0.9);
+  border: none;
+  border-radius: 50px;
+}
+.dialog__title, .dialog__text {
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 400;
+}
+.dialog__title {
+  color: bisque;
+  font-size: 60px;
+}
+.dialog__text {
+  color: whitesmoke;
+  font-size: 20px;
 }
 
 /*! header  */

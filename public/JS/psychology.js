@@ -5,6 +5,7 @@ const contactFormName = document.querySelector("#contact-name");
 const contactFormEmail = document.querySelector("#contact-email");
 const contactFormMessage = document.querySelector("#contact-message");
 const topicsSwitch = document.querySelector(".checkbox_mark");
+const articleBtns = document.querySelectorAll(".articles-section__btn");
 
 const chaptersArr = [
   document.querySelector(".top-section"),
@@ -73,6 +74,11 @@ lottieContArr.forEach((container, i) => {
 // add Parent - Teenager toggle switch handler
 topicsSwitch.addEventListener("click", changeTopics);
 
+// open Dialog for each article buttons
+articleBtns.forEach((btn) =>
+  btn.addEventListener("click", () => showDialog(btn.dataset.about))
+);
+
 function updateHeaderStyle() {
   const header = document.querySelector("header");
   const links = document.querySelectorAll(".link");
@@ -91,10 +97,7 @@ async function handleUserMessage(data) {
     // data field name can't be changed
     const res = await axios({
       method: "POST",
-      // url:
-      //   process.env.NODE_ENV === "production"
-      //     ? process.env.URL
-      //     : "http://127.0.0.1:3000/",
+      // url: "http://127.0.0.1:3000/",
       url: "https://nikolskaya.org/",
       data,
     });
@@ -158,4 +161,24 @@ function changeTopics() {
   teenTopics.classList.toggle("hidden");
   adultText.classList.toggle("active-switch");
   teenText.classList.toggle("active-switch");
+}
+
+function showDialog(data) {
+  const dialog = document.querySelector(".dialogWindow");
+  const title = document.querySelector(".dialog__title");
+  const text = document.querySelector(".dialog__text");
+  const conditionsText = "1 - оплата заранее. 2 - быть хорошим";
+  const firstText = "Пьем чай и болтаем";
+  dialog.showModal();
+  if (data == "conditions") {
+    title.innerHTML = "Условия работы";
+    text.innerHTML = conditionsText;
+  }
+  if (data == "first") {
+    title.innerHTML = "Как проходит первая сессия";
+    text.innerHTML = firstText;
+  }
+  dialog.addEventListener("click", () => {
+    dialog.close();
+  });
 }
