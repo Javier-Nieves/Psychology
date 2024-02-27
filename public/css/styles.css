@@ -8,6 +8,7 @@ body{
   display: flex;
   flex-direction: column;
   /* position: relative; */
+  background-color: rgb(241, 254, 225);
 }
 a {
   text-decoration: none;
@@ -36,12 +37,26 @@ a {
 }
 .section {
   position: relative;
-  /* height: 90vh; */
   width: 100vw;
+}
+/* sections will appear from above. Articles sections contains Y-parallax and can't have translateY */
+.self-section, .values-section, .topics-section, .articles-section {
+  transition: all 1.5s ease;
+  opacity: 0;
+}
+.self-section, .values-section, .articles-section {
+  transform: translateY(30px);
+}
+.visible-section {
+  opacity: 1;
+}
+.self-section.visible-section, .values-section.visible-section, .articles-section.visible-section {
+  transform: translateY(0);
 }
 /*! top section */
 .top-section {
   height: 100vh;
+  overflow: hidden;
 }
 .top-section__photo {
   position: absolute;
@@ -100,9 +115,6 @@ a {
   height: 100%;
 }
 /*! self info section  */
-.self-section, .values-section, .topics-section, .articles-section {
-  background-color: rgb(241, 254, 225);
-}
 .self-section {
   /* height: 90vh; */
 }
@@ -238,8 +250,7 @@ a {
   background-size: cover;
   /* this makes image stick to back and create parallax: */
   background-attachment: fixed;
-  filter:brightness(60%);
-  filter:contrast(60%);
+  filter:brightness(90%) contrast(60%);
 }
 .topics-section__title {
   color: white;
@@ -365,9 +376,9 @@ a {
 }
 
 /*! Articles section */
-/* .articles-section {
-  padding: 50px;
-} */
+.articles-section {
+  background-color: rgb(241, 254, 225);
+}
 .articles-section__btn-container {
   flex: 1;
   flex-wrap: wrap;
@@ -419,7 +430,7 @@ a {
 /*! Contact Section */
 .contact-section {
   background-color: rgb(252, 247, 237);
-  padding-bottom: 70px;
+  padding-bottom: 30px;
 }
 .contact-section__container {
   width: 100%;
@@ -600,4 +611,21 @@ footer{
   font-size: 18px;
   font-family: 'Philosopher', sans-serif;
   font-weight: 400;
+}
+
+/*! mobile devices */
+/* laptop starts shrinking */
+@media screen and (min-width: 1050px) and (max-width: 1300px) {
+  .top-section__text-backdrop {
+    height: 100%;
+    background-color: rgb(252, 247, 237);
+    -webkit-clip-path: polygon(0 0, 50% 0%, 40% 100%, 0% 100%);
+    clip-path: polygon(0 0, 55% 0%, 45% 100%, 0% 100%);
+  }
+  .top-section__text-big{
+    font-size: 40px;
+  }
+  .nav-links-container{
+    margin-left: 12%;
+  }
 }

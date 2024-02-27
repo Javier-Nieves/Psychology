@@ -23,6 +23,14 @@ const linksArr = [
   document.querySelector(".articlesLink"),
   document.querySelector(".top-section__contact-btn"),
 ];
+// todo - copy chapterArr and modify it:
+const appearArr = [
+  document.querySelector(".self-section"),
+  document.querySelector(".self-section__text-container"),
+  document.querySelector(".values-section"),
+  document.querySelector(".topics-section"),
+  document.querySelector(".articles-section"),
+];
 
 //! Handlers
 // create chapter links
@@ -71,13 +79,32 @@ lottieContArr.forEach((container, i) => {
   });
 });
 
-// add Parent - Teenager toggle switch handler
+// add Parent-Teenager toggle switch handler
 topicsSwitch.addEventListener("click", changeTopics);
 
 // open Dialog for each article buttons
 articleBtns.forEach((btn) =>
   btn.addEventListener("click", () => showDialog(btn.dataset.about))
 );
+
+// Smooth appearing of the sections:
+// Create an Intersection Observer instance
+const observer = new IntersectionObserver(handleIntersection, {
+  root: null, // Use viewport as root
+  rootMargin: "0px",
+  threshold: 0.1, // When 10% of target is visible
+});
+// Apply observer to each Section
+chaptersArr.forEach((section) => observer.observe(section));
+
+function handleIntersection(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible-section");
+      observer.unobserve(entry.target); // Stop observing once shown
+    }
+  });
+}
 
 function updateHeaderStyle() {
   const header = document.querySelector("header");
@@ -167,8 +194,8 @@ function showDialog(data) {
   const dialog = document.querySelector(".dialogWindow");
   const title = document.querySelector(".dialog__title");
   const text = document.querySelector(".dialog__text");
-  const conditionsText = "1 - оплата заранее. 2 - быть хорошим";
-  const firstText = "Пьем чай и болтаем";
+  const conditionsText = " ";
+  const firstText = " ";
   dialog.showModal();
   if (data == "conditions") {
     title.innerHTML = "Условия работы";
