@@ -7,6 +7,7 @@ const contactFormMessage = document.querySelector("#contact-message");
 const topicsSwitch = document.querySelector(".checkbox_mark");
 const articleBtns = document.querySelectorAll(".articles-section__btn");
 
+// arrays to create top links
 const chaptersArr = [
   document.querySelector(".top-section"),
   document.querySelector(".self-section"),
@@ -23,11 +24,12 @@ const linksArr = [
   document.querySelector(".articlesLink"),
   document.querySelector(".top-section__contact-btn"),
 ];
-// todo - copy chapterArr and modify it:
+// array with order of appearance
 const appearArr = [
   document.querySelector(".self-section"),
   document.querySelector(".self-section__text-container"),
   document.querySelector(".values-section"),
+  ...document.querySelectorAll(".values-section__wrapper"),
   document.querySelector(".topics-section"),
   document.querySelector(".articles-section"),
 ];
@@ -90,17 +92,17 @@ articleBtns.forEach((btn) =>
 // Smooth appearing of the sections:
 // Create an Intersection Observer instance
 const observer = new IntersectionObserver(handleIntersection, {
-  root: null, // Use viewport as root
+  root: null,
   rootMargin: "0px",
   threshold: 0.1, // When 10% of target is visible
 });
-// Apply observer to each Section
-chaptersArr.forEach((section) => observer.observe(section));
+// Apply observer to each appearing element
+appearArr.forEach((section) => observer.observe(section));
 
 function handleIntersection(entries, observer) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add("visible-section");
+      entry.target.classList.add("appear");
       observer.unobserve(entry.target); // Stop observing once shown
     }
   });

@@ -40,17 +40,20 @@ a {
   width: 100vw;
 }
 /* sections will appear from above. Articles sections contains Y-parallax and can't have translateY */
-.self-section, .values-section, .topics-section, .articles-section {
+.self-section, .values-section, .topics-section, .articles-section, 
+.self-section__text-container, .values-section__wrapper {
   transition: all 1.5s ease;
   opacity: 0;
 }
-.self-section, .values-section, .articles-section {
+.self-section, .values-section, .articles-section, 
+.self-section__text-container, .values-section__wrapper {
   transform: translateY(30px);
 }
-.visible-section {
+.appear {
   opacity: 1;
 }
-.self-section.visible-section, .values-section.visible-section, .articles-section.visible-section {
+.self-section.appear, .values-section.appear, 
+.articles-section.appear, .self-section__text-container.appear, .values-section__wrapper.appear {
   transform: translateY(0);
 }
 /*! top section */
