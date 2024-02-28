@@ -430,6 +430,63 @@ a {
   font-size: 25px;
 }
 
+/* Dialog  */
+dialog{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  opacity: 0;
+  scale: 0;
+  transition: all 0.5s;
+  width: 100%;
+  height: 100%;
+  z-index: 80;
+}
+dialog[open] {
+  opacity: 1;
+  scale: 1;
+}
+dialog::backdrop {
+  background-color: rgba(119, 144, 84, 0.5);
+}
+.dialogWindow {
+  width: 70%;
+  /* height: 100%; */
+  background-color: rgba(42, 42, 42, 0.9);
+  border: none;
+  border-radius: 50px;
+  justify-content: flex-start;
+}
+.dialog__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+}
+.dialog__title, .dialog__text {
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 400;
+}
+.dialog__title {
+  /* position: absolute; */
+  color: bisque;
+  font-size: 80px;
+  margin-bottom: 15px;
+}
+.dialog__text {
+  color: whitesmoke;
+  font-size: 20px;
+  line-height: 25px;
+  width: 95%;
+}
+.condition-title {
+  padding: 10px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 30px;
+  color: bisque;
+}
 /*! Contact Section */
 .contact-section {
   background-color: rgb(252, 247, 237);
@@ -490,46 +547,6 @@ a {
 }
 .contact-section__loader > * {
   height: 64px !important;
-}
-
-/*! Dialog  */
-dialog{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  opacity: 0;
-  scale: 0;
-  transition: all 0.5s;
-  width: 100%;
-  height: 100%;
-  z-index: 80;
-}
-dialog[open] {
-  opacity: 1;
-  scale: 1;
-}
-dialog::backdrop {
-  background-color: rgba(119, 144, 84, 0.5);
-}
-.dialogWindow {
-  width: 60%;
-  height: 80%;
-  background-color: rgba(42, 42, 42, 0.9);
-  border: none;
-  border-radius: 50px;
-}
-.dialog__title, .dialog__text {
-  font-family: 'Philosopher', sans-serif;
-  font-weight: 400;
-}
-.dialog__title {
-  color: bisque;
-  font-size: 60px;
-}
-.dialog__text {
-  color: whitesmoke;
-  font-size: 20px;
 }
 
 /*! header  */
@@ -617,8 +634,9 @@ footer{
 }
 
 /*! mobile devices */
-/* laptop starts shrinking */
-@media screen and (min-width: 1050px) and (max-width: 1300px) {
+/* laptop starts shrinking. iPad Pro*/
+/* and (min-width: 1050px)  */
+@media screen and (max-width: 1400px) and (orientation: landscape){ 
   .top-section__text-backdrop {
     height: 100%;
     background-color: rgb(252, 247, 237);
@@ -630,5 +648,74 @@ footer{
   }
   .nav-links-container{
     margin-left: 12%;
+  }
+  .values-section__content {
+    width: 90%;
+    margin-right: 15px;
+  }
+}
+
+/* iPad mini (landscape) */
+@media screen and (max-width: 1400px) and (orientation: landscape) { 
+  .top-section__text-small {
+    font-size: 26px;
+  }
+  .self-section__text-container {
+    width: 85%;
+    margin-left: 20px;
+  }
+  .self-section__small-text {
+    width: 95%;
+  }
+}
+
+/* iPhone max */
+@media screen and (max-width: 500px) and (orientation: portrait) { 
+  .nav-links-container {
+    display: none;
+  }
+  .brand__name {
+    font-size: 30px;
+  }
+  .top-section__photo {
+    display: none;
+  }
+  .top-section__text-backdrop {
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+  .top-section__text {
+    width: 90%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .top-section {
+    height: 90vh;
+  }
+  .top-section__text-big {
+    margin-bottom: 20px;
+  }
+  .top-section__contact-btn {
+    margin-top: 70px;
+    font-size: 20px;
+  }
+
+  .self-section__title {
+    height: 5%;
+    padding: 10px;
+  }
+  .self-section__content {
+    margin-top: 60px;
+  }
+  .self-section__text-container {
+    width: 100%;
+    padding: 20px;
+  }
+  .self-section__small-text {
+    padding: 0;
+    margin-top: 10px;
+    font-size: 18px;
   }
 }
