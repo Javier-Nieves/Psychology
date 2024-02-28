@@ -1,4 +1,6 @@
 "use strict";
+import { conditionsText, firstText } from "./dialog.js";
+
 // DOM selector:
 const contactForm = document.querySelector("#contact-form");
 const contactFormName = document.querySelector("#contact-name");
@@ -7,15 +9,17 @@ const contactFormMessage = document.querySelector("#contact-message");
 const topicsSwitch = document.querySelector(".checkbox_mark");
 const articleBtns = document.querySelectorAll(".articles-section__btn");
 
+const topSection = document.querySelector(".top-section");
+const selfSection = document.querySelector(".self-section");
+const valuesSection = document.querySelector(".values-section");
+const topicsSection = document.querySelector(".topics-section");
+const articlesSection = document.querySelector(".articles-section");
+const contactSection = document.querySelector(".contact-section");
+
 // arrays to create top links
-const chaptersArr = [
-  document.querySelector(".top-section"),
-  document.querySelector(".self-section"),
-  document.querySelector(".values-section"),
-  document.querySelector(".topics-section"),
-  document.querySelector(".articles-section"),
-  document.querySelector(".contact-section"),
-];
+// prettier-ignore
+const chaptersArr = [topSection, selfSection, valuesSection, 
+    topicsSection, articlesSection, contactSection];
 const linksArr = [
   document.querySelector(".brand"),
   document.querySelector(".selfLink"),
@@ -26,12 +30,12 @@ const linksArr = [
 ];
 // array with order of appearance
 const appearArr = [
-  document.querySelector(".self-section"),
+  selfSection,
   document.querySelector(".self-section__text-container"),
-  document.querySelector(".values-section"),
+  valuesSection,
   ...document.querySelectorAll(".values-section__wrapper"),
-  document.querySelector(".topics-section"),
-  document.querySelector(".articles-section"),
+  topicsSection,
+  articlesSection,
 ];
 
 //! Handlers
@@ -196,42 +200,6 @@ function showDialog(data) {
   const dialog = document.querySelector(".dialogWindow");
   const title = document.querySelector(".dialog__title");
   const text = document.querySelector(".dialog__text");
-  // todo - make separate file
-  const conditionsText = `
-    <div>Рада пригласить вас на консультации! Прошу ознакомиться с контрактом, 
-    который выполняет роль памятки и закрепляет взаимные обязательства.</div>
-    <div class='condition-title'>Запрос</div>
-    <div>Сессии будут проходить эффективно, если у вас есть конкретный запрос.
-    Вы можете подумать перед встречей, что вы хотели бы получить по итогам нашей работы.</div>
-    <div class='condition-title'>Что происходит на сессиях</div>
-    <div>Я работаю в когнитивно-поведенческой терапии, поэтому наши встречи будут иметь структуру. 
-    В начале вы делитесь, что важного произошло на неделе и каким было ваше эмоциональное состояние, затем мы совместно 
-    намечаем план на сессию. В ходе встречи мы будем обсуждать ваши чувства, анализировать мысли и действия. Я научу вас 
-    техникам, которые вы сможете применять в жизни, постепенно становясь психологом самому себе. Также, если это будет 
-    вам полезно, я могу делиться информацией о работе психики. В конце сессии мы выберем подходящее вам домашнее задание, 
-    подведем итоги, я запрошу у вас обратную связь - что (не) понравилось, что полезного вы унесете с собой, было ли вам комфортно.</div>
-    <div class='condition-title'>Продолжительность консультации</div> 
-    <div>Около 60 минут. Периодичность определяем вместе с вами (обычно раз в неделю).</div>
-    <div class='condition-title'>Оплата и отмена сессий</div>
-  - Вы оплачиваете сессию заранее, минимум за 12 часов до встречи. Можно оплатить как одну, так и 
-    несколько консультаций. При оплате пакета из 5 сессий вы получаете скидку. <br>
-  - К моему номеру телефона привязаны карты Сбера и Тинькофф (Никольская Ирина Григорьевна). Пришлите 
-    мне подтверждение оплаты, и я смогу зарезервировать за вами время в расписании.<br>
-  - Если необходимо отменить сессию, предупредите меня за 12 часов до ее начала, тогда ваша оплата 
-    переносится на следующий раз.<br>
-  - Если в день встречи вы не предупредили и не пришли, стоимость сессии списывается. Если я не 
-    предупредила и не пришла, проведу оплаченную консультацию плюс еще одну бесплатно.<br>
-  - Я предупреждаю заранее о своем отпуске.<br>
-    <div class='condition-title'>Опоздания</div>
-    <div>Сессии в онлайне начинаются в назначенное время. Если по каким-то причинам я должна буду 
-    задержаться, то предупрежу вас. Мы либо перенесем сессию, либо сдвинем ее, и встреча продлится 
-    столько времени, сколько запланировано. Если опаздываете вы, желательно предупредить меня. Тогда 
-    я смогу поискать возможность перенести сессию или сдвинуть ее. А если предупредить не получилось, 
-    наша встреча будет короче на время вашего опоздания.
-    <div class='condition-title'>Конфиденциальность</div><div>Все обсуждаемое на сессиях, а также 
-    записи, которые я веду, не выносятся без вашего письменного разрешения никогда и никуда за 
-    исключением случаев, когда речь идет об угрозе здоровью и жизни для вас или других лиц.</div>`;
-  const firstText = " ";
   dialog.showModal();
   if (data == "conditions") {
     title.innerHTML = "Условия работы";
