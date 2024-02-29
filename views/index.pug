@@ -17,13 +17,15 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
     //- <!-- Include Lottie Library -->
     script(src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js")
+    link(rel="canonical" href="https://nikolskaya.org")
     link(href="css/styles.css" rel="stylesheet")
     link(href="img/favicon.png" rel="icon")
     //- Axios CDN - the way to import axios without bundlers:
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    //- fonts:
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=IBM+Plex+Serif&family=Inter:wght@300;400;500;900&family=Lobster&family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
   body
     header.flex-container
@@ -113,7 +115,7 @@ html
 
           .flex-column.articles-section__btn-container
             button.articles-section__btn(data-about='conditions') Условия работы
-            button.articles-section__btn(data-about='first') Как проходит первая сессия
+            //- button.articles-section__btn(data-about='first') Как проходит первая сессия
 
       .section.flex-column.contact-section
         .contact-section__title Напишите мне:
