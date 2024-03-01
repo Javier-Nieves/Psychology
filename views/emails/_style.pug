@@ -1,70 +1,95 @@
 style.
   html {
-  font-family: "Philosopher", sans-serif;
-  font-weight: 400;
-  }
-  body {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 85%;
-  }
-  .flex-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .flex-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .backdrop {
-    height: 100%;
-    width: 100%;
-    background-color: rgb(229, 229, 229);
-  }
-  .letter__content {
-    justify-content:flex-start;
-    width: 50%;
-    padding: 20px;
-    /* height: 50%; */
-    background-color: rgb(212, 249, 183);
-  }
-  .letter__content > * {
-    padding: 15px;
-  }
-  .letter__line-container {
-    width: 80%;
-    background-color: aliceblue;
-  }
-  .letter__text-line {
-    font-size: 20px;
-  }
-  .letter__message {
-    background-color: rgba(111, 111, 111, 0.3);
-    padding: 15px;
-  }
-  .left {
-    width: 40%;
-  }
-  .right {
-    width: 55%;
-  }
-  .letter__title {
-    margin: 20px 0 20px 0;
-    font-size: 30px;
-  }
-
-  .footer {
-    height: 10%;
-    background-color: rgba(212, 212, 212, 0.3);
-    padding: 8px;
-  }
-  .footer-text {
-    color: grey;
-    font-size: 18px;
-  }
+    font-family: "Philosopher", sans-serif;
+    font-weight: 400;
+    }
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    body {
+      max-width: 800px;
+      /* background-image: url('/welcome.jpg');
+      background-size: cover; */
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 85%;
+      margin: 0;
+    }
+    .flex-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .flex-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .letter__content {
+      justify-content:flex-start;
+      padding: 20px;
+      background: rgb(175,238,113);
+      background: radial-gradient(circle, rgba(175,238,113,0.4) 0%, rgba(76,209,51,0.8) 100%);
+      padding-bottom: 50px;
+    }
+    .letter__content > * {
+      padding: 15px;
+    }
+    .letter__text-line {
+      font-size: 20px;
+    }
+    .letter__message {
+      font-style: italic;
+      border-radius: 30px;
+      border: 1px solid green;
+      padding: 3em;
+      margin: 1em;
+    }
+    .letter__title {
+      margin-top: 1em;
+      font-size: 30px;
+    }
+    footer {
+      height: 3em;
+      background-color: rgba(212, 212, 212, 0.3);
+      padding: 8px;
+      color: grey;
+      font-size: 18px;
+      font-family: "Philosopher", sans-serif;
+      font-weight: 400;
+    }
+    /* header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      max-width: 800px;
+      height: 10vh;
+      transition: all 1s ease-in-out;
+      justify-content: space-between !important;
+    }
+    .brand {
+      margin: 10px 0 0 20px;
+      transition: all 0.4s ease-in-out;
+    }
+    .brand__name {
+      font-size: 26px;
+    }
+    .brand__sub {
+      font-size: 17px;
+      font-family: 'Philosopher', sans-serif;
+    }
+    .svg-social-top {
+      fill: rgb(3, 2, 2);
+      width: 40px;
+      height: 40px;
+      transition: all 0.3s ease-in-out;
+      margin-right: 20px;
+    }
