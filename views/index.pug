@@ -55,7 +55,7 @@ html
             button.top-section__contact-btn Хочу на консультацию
 
       .section.flex-column.self-section
-        .self-section__title Обо мне
+        .section-title.self-section__title Обо мне
         .flex-container.self-section__content
           //- img(src="/img/photo2.jpg" alt="my photo here" class="self-section__photo")
           .flex-column.self-section__text-container
@@ -65,9 +65,10 @@ html
             .self-section__small-text Чтобы оказывать профессиональную помощь, я постоянно учусь и повышаю  квалификацию, нахожусь в личной терапии и регулярно посещаю супервизии.
             .self-section__small-text Работаю в когнитивно-поведенческом подходе. КПТ - один из самых исследованных и эффективных методов психотерапии. На сессиях вы узнаете, как мысли меняют наше настроение, и научитесь менять те убеждения, которые негативно влияют на вашу жизнь. 
             .self-section__small-text Если хотите улучшить свое психологическое состояние бережно и без насилия над собой, приходите на консультацию!
+            .mobile-lottie.lottie-conversation
 
       .section.flex-column.values-section
-        .values-section__title Мои Ценности
+        .section-title.values-section__title Мои Ценности
         .flex-container.values-section__content
           .flex-column.values-column
             +valueBlock('Соблюдение профессиональной этики', 'Все, что вы расскажете, останется между нами. Если ваш запрос окажется не в зоне моей компетенции, перенаправлю вас к другому специалисту.')
@@ -75,11 +76,11 @@ html
             +valueBlock('Поддержка', 'Вы решили разобраться со своей проблемой, и это большой шаг. Я буду рядом даже когда будет трудно.')
             +valueBlock('Уважение границ', 'Вы делитесь только тем, чем готовы поделиться. В своем ритме.')
             +valueBlock('Обучение', 'Я постоянно учусь, чтобы лучше помогать.')
-          div(id="lottie-conversation")
+          .pc-lottie.lottie-conversation
 
       .section.flex-column.topics-section
         .topics-section__backdrop-img
-        .topics-section__title С чем я помогаю
+        .section-title.topics-section__title С чем я помогаю
         .checkbox_item.citem_2.flex-container
           .title-switch.active-switch.adult Взрослым
           label.checkbox_wrap
@@ -118,7 +119,7 @@ html
             //- button.articles-section__btn(data-about='first') Как проходит первая сессия
 
       .section.flex-column.contact-section
-        .contact-section__title Напишите мне:
+        .section-title.contact-section__title Напишите мне:
         .flex-container.contact-section__container
           img(src="/img/photo2.jpg" alt="my photo here" class="contact-section__photo")
           form(id="contact-form" class="flex-column")

@@ -68,9 +68,9 @@ window.addEventListener("scroll", updateHeaderStyle);
 // window.addEventListener("scroll", handleParallax);
 
 // activate lottie animations
-const lottieArr = ["therapy", "loader", "leaf"];
+const lottieArr = ["therapy", "therapy", "loader", "leaf"];
 const lottieContArr = [
-  document.querySelector("#lottie-conversation"),
+  ...document.querySelectorAll(".lottie-conversation"),
   document.querySelector(".contact-section__loader"),
   document.querySelector(".lottie-leaves"),
 ];
