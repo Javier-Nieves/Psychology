@@ -9,8 +9,9 @@ body{
   flex-direction: column;
   /* position: relative; */
   background-color: rgb(241, 254, 225);
+  overflow-x: hidden;
 }
-a {
+a, a:visited {
   text-decoration: none;
   color: black;
   transition: all 0.3s ease-in-out;
@@ -454,7 +455,8 @@ dialog[open] {
   scale: 1;
 }
 dialog::backdrop {
-  background-color: rgba(119, 144, 84, 0.5);
+  background-color: rgba(119, 144, 84, 0.6);
+  backdrop-filter: blur(5px);
 }
 .dialogWindow {
   width: 70%;
@@ -584,7 +586,7 @@ header {
 }
 .brand__name {
   font-size: 4vh;
-  /* font-family: 'Philosopher', sans-serif; */
+  font-family: 'Philosopher', sans-serif;
 }
 .brand__sub {
   font-size: 17px;
@@ -675,7 +677,7 @@ footer{
   }
 }
 
-/* iPhone max */
+/* iPhone PRO max */
 @media screen and (max-width: 500px) and (orientation: portrait) { 
   .nav-links-container {
     display: none;
@@ -687,25 +689,23 @@ footer{
     /* display: none; */
     margin: 0;
     z-index: 0;
-    /* filter: contrast(0.5); */
   }
   .top-section__text-backdrop {
     -webkit-clip-path: none;
     clip-path: none;
-    /* background-image: url(/img/backTopics.jpeg); */
   }
   .top-section__text {
-    width: 90%;
-    top: 45%;
-    left: 3%;
-    padding: 10px;
+    width: 100%;
+    top: 67%;
+    left: -3%;
+    padding: 23px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgba(236, 236, 236, 0.65);
     /* border: 1px solid bisque; */
     border-radius: 20px;
-    /* backdrop-filter: blur(2px); */
+    backdrop-filter: blur(4px);
   }
   .top-section__text > *{
     text-align: center;
@@ -713,19 +713,22 @@ footer{
   .top-section {
     height: 90vh;
   }
-  .top-section__text-big, .top-section__text-small {
+  .top-section__text-small {
     color: black;
+    font-size: 26px;
+    margin-top: 0;
+    padding-bottom: 25px;
   }
   .top-section__text-big {
-    /* -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: bisque; */
+    color: black;
     margin-bottom: 20px;
   }
   .top-section__contact-btn {
-    margin-top: 50px;
     font-size: 20px;
+    position: absolute;
+    top: -130%;
+    left: 7%;
   }
-
   .self-section__title {
     height: 5%;
     padding: 10px;
@@ -758,7 +761,7 @@ footer{
   .values-section__content {
     width: 100%;
     border-radius: 0px;
-    padding: 10px;
+    padding: 10px 0;
     margin-bottom: 0px;
     margin-top: 90px;
   }
@@ -823,5 +826,45 @@ footer{
   }
   .footer-text {
     text-align: center;
+  }
+}
+
+/* iPhone max, XR */
+@media screen and (max-width: 420px) and (orientation: portrait) {
+  .top-section__text {
+    top: 67%;
+    left: -6%;
+    padding-bottom: 100px;
+  }
+  .top-section__text-big {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .top-section__contact-btn {
+    top: -110%;
+  }
+}
+
+/* iPhone SE */
+@media screen and (max-width: 420px) and (orientation: portrait) {
+  .brand {
+    top: 0;
+  }
+  .brand__name {
+    font-size: 25px;
+  }
+  .svg-social-top {
+    width: 35px;
+  }
+  .top-section__contact-btn {
+    top: -35%;
+  }
+  .top-section__text-big {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+  .top-section__text-small {
+    font-size: 22px;
+    padding-bottom: 25px;
   }
 }
