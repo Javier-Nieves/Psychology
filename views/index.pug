@@ -47,12 +47,12 @@ html
       .section.top-section
         img(src="img/mainBack.jpg" alt="Main photo" class="top-section__photo")
         .top-section__text-backdrop
-          .lottie-leaves
-          .top-section__text
-            .top-section__text-big Практикующий психолог
-            .top-section__text-small Когнитивно-поведенческая терапия
-            .top-section__text-small Для взрослых и подростков
-            button.top-section__contact-btn Хочу на консультацию
+        .lottie-leaves
+        .top-section__text
+          .top-section__text-big Практикующий психолог
+          .top-section__text-small Когнитивно-поведенческая терапия
+          .top-section__text-small Для взрослых и подростков
+          button.top-section__contact-btn Хочу на консультацию
 
       .section.flex-column.self-section
         .section-title.self-section__title Обо мне
@@ -117,6 +117,10 @@ html
           .flex-column.articles-section__btn-container
             button.articles-section__btn(data-about='conditions') Условия работы
             //- button.articles-section__btn(data-about='first') Как проходит первая сессия
+        dialog.flex-column.dialogWindow
+          .dialog__content
+            .dialog__title
+            .dialog__text
 
       .section.flex-column.contact-section
         .section-title.contact-section__title Напишите мне:
@@ -129,11 +133,6 @@ html
             button.contact-section__send-btn Отправить
             .contact-section__loader
         .message-plane
-
-      dialog.flex-column.dialogWindow
-        .dialog__content
-          .dialog__title
-          .dialog__text
 
     footer.flex-container
       .footer-text Ирина Никольская, психолог-консультант. Все права защищены. 2022 - 2024
