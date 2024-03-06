@@ -11,7 +11,7 @@ body{
   background-color: rgb(241, 254, 225);
   overflow-x: hidden;
 }
-a, a:visited, a:active, a:link {
+a, a:visited {
   text-decoration: none;
   color: black;
   transition: all 0.3s ease-in-out;
@@ -153,6 +153,7 @@ a, a:visited, a:active, a:link {
   font-weight: 400;
 }
 .self-section__title, .values-section__title, .contact-section__title {
+  /* color: #6bac2b; */
   background-image: linear-gradient(90deg, rgb(43, 73, 25), #6bac2b);
   background-clip: text;
   -webkit-background-clip: text;
@@ -408,6 +409,7 @@ a, a:visited, a:active, a:link {
   border-radius: 10px;
 }
 .articles-section__btn {
+  color: black;
   text-align: center;
   border: none;
 }
@@ -571,7 +573,7 @@ header {
   top: 0;
   left: 0;
   z-index: 10;
-  width: 100%;
+  width: 100vw;
   height: 10vh;
   transition: all 1s ease-in-out;
 }
