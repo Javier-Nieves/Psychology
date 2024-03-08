@@ -130,8 +130,8 @@ async function handleUserMessage(data) {
     // data field name can't be changed
     const res = await axios({
       method: "POST",
-      url: "http://127.0.0.1:8080/",
-      // url: "https://nikolskaya.org/",
+      // url: "http://127.0.0.1:8080/",
+      url: "https://nikolskaya.org/",
       data,
     });
     if (res.data.status === "success") {
