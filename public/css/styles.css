@@ -1,17 +1,19 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100vw;
 }
-body{
+body {
   display: flex;
   flex-direction: column;
   /* position: relative; */
   background-color: rgb(241, 254, 225);
   overflow-x: hidden;
 }
-a, a:visited {
+a,
+a:visited {
   text-decoration: none;
   color: black;
   transition: all 0.3s ease-in-out;
@@ -19,7 +21,8 @@ a, a:visited {
 .mobile-lottie {
   display: none;
 }
-.svg-social-top:hover, .svg-social:hover {
+.svg-social-top:hover,
+.svg-social:hover {
   transform: scale(1.15);
 }
 .flex-container {
@@ -44,20 +47,30 @@ a, a:visited {
   width: 100vw;
 }
 /* sections will appear from above. Articles sections contains Y-parallax and can't have translateY */
-.self-section, .values-section, .topics-section, .articles-section, 
-.self-section__text-container, .values-section__wrapper {
+.self-section,
+.values-section,
+.topics-section,
+.articles-section,
+.self-section__text-container,
+.values-section__wrapper {
   transition: all 1.5s ease;
   opacity: 0;
 }
-.self-section, .values-section, .articles-section, 
-.self-section__text-container, .values-section__wrapper {
+.self-section,
+.values-section,
+.articles-section,
+.self-section__text-container,
+.values-section__wrapper {
   transform: translateY(30px);
 }
 .appear {
   opacity: 1;
 }
-.self-section.appear, .values-section.appear, 
-.articles-section.appear, .self-section__text-container.appear, .values-section__wrapper.appear {
+.self-section.appear,
+.values-section.appear,
+.articles-section.appear,
+.self-section__text-container.appear,
+.values-section__wrapper.appear {
   transform: translateY(0);
 }
 /*! top section */
@@ -75,8 +88,28 @@ a, a:visited {
   height: 100%;
   width: 100%;
   background-color: rgb(252, 247, 237);
-  -webkit-clip-path: polygon(0 0, 50% 0%, 40% 100%, 0% 100%, 80% 100%, 90% 0%, 100% 0%, 100% 100%, 0% 100%);
-  clip-path: polygon(0 0, 55% 0%, 45% 100%, 0% 100%,83% 100%, 93% 0%, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(
+    0 0,
+    50% 0%,
+    40% 100%,
+    0% 100%,
+    80% 100%,
+    90% 0%,
+    100% 0%,
+    100% 100%,
+    0% 100%
+  );
+  clip-path: polygon(
+    0 0,
+    55% 0%,
+    45% 100%,
+    0% 100%,
+    83% 100%,
+    93% 0%,
+    100% 0%,
+    100% 100%,
+    0% 100%
+  );
   z-index: -5;
   position: absolute;
   top: 0;
@@ -91,16 +124,18 @@ a, a:visited {
 }
 .top-section__text-big {
   font-size: 50px;
-  font-family: 'Philosopher', sans-serif;
+  font-family: "Philosopher", sans-serif;
   font-weight: 700;
 }
 .top-section__text-small {
-  font-family: 'Philosopher', sans-serif;
+  font-family: "Philosopher", sans-serif;
   font-weight: 400;
   font-size: 30px;
   margin-top: 30px;
 }
-.top-section__contact-btn, .contact-section__send-btn, .contact-section__loader {
+.top-section__contact-btn,
+.contact-section__send-btn,
+.contact-section__loader {
   background-color: rgba(101, 143, 53, 0.7);
   /* background: rgb(250,66,40); */
   /* background: linear-gradient(90deg, rgba(250,66,40,1) 0%, rgba(255,120,26,1) 92%); */
@@ -109,14 +144,15 @@ a, a:visited {
   color: rgb(252, 251, 250);
   padding: 15px;
   font-size: 30px;
-  font-family: 'Philosopher', sans-serif;
+  font-family: "Philosopher", sans-serif;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 0 10px rgb(197, 197, 197);
 }
 .top-section__contact-btn {
   margin-top: 30px;
 }
-.top-section__contact-btn:hover, .contact-section__send-btn:hover {
+.top-section__contact-btn:hover,
+.contact-section__send-btn:hover {
   cursor: pointer;
   background-color: rgba(101, 143, 53, 0.8);
   box-shadow: 0 0 10px rgb(197, 197, 197);
@@ -149,11 +185,12 @@ a, a:visited {
   width: 100%;
   height: 15%;
   font-size: 60px;
-  font-family: 'Philosopher', sans-serif;
+  font-family: "Philosopher", sans-serif;
   font-weight: 400;
 }
-.self-section__title, .values-section__title, .contact-section__title {
-  /* color: #6bac2b; */
+.self-section__title,
+.values-section__title,
+.contact-section__title {
   background-image: linear-gradient(90deg, rgb(43, 73, 25), #6bac2b);
   background-clip: text;
   -webkit-background-clip: text;
@@ -168,7 +205,7 @@ a, a:visited {
 }
 .self-section__small-text {
   width: 100%;
-  font-family: 'Philosopher', sans-serif;
+  font-family: "Philosopher", sans-serif;
   font-weight: 400;
   font-size: 22px;
   text-align: justify;
@@ -208,7 +245,11 @@ a, a:visited {
   margin: 100px 0 40px 0;
   /* background-color: rgba(185, 116, 249, 0.3); */
   background: rgb(250, 194, 255);
-  background: linear-gradient(90deg, rgba(234, 33, 252, 0.0) 0%, rgba(250, 73, 227, 0.25) 90%);
+  background: linear-gradient(
+    90deg,
+    rgba(234, 33, 252, 0) 0%,
+    rgba(250, 73, 227, 0.25) 90%
+  );
   border-radius: 25px;
   padding: 40px 20px;
 }
@@ -230,7 +271,7 @@ a, a:visited {
 }
 .values-section__value-container > * {
   font-size: 22px;
-  font-family: 'Philosopher', sans-serif;
+  font-family: "Philosopher", sans-serif;
   font-weight: 400;
   /* text-align: justify; */
 }
@@ -263,7 +304,7 @@ a, a:visited {
   background-size: cover;
   /* this makes image stick to back and create parallax: */
   background-attachment: fixed;
-  filter:brightness(90%) contrast(60%);
+  filter: brightness(90%) contrast(60%);
 }
 .topics-section__title {
   color: white;
@@ -311,21 +352,31 @@ a, a:visited {
   padding: 10px;
   font-size: 25px;
   color: bisque;
-  font-family: 'Philosopher', sans-serif;
+  font-family: "Philosopher", sans-serif;
   font-weight: 400;
   text-align: center;
 }
 .title-switch {
   color: rgb(195, 195, 195);
   font-size: 32px;
-  font-family: 'Philosopher', sans-serif;
+  font-family: "Philosopher", sans-serif;
   font-weight: 400;
   border-radius: 15px;
   padding: 0px 5px 10px 5px;
   /* margin-top: 10px; */
-  mask-image: linear-gradient(-75deg, rgba(0,0,0,.9) 30%, #000 50%, rgba(0,0,0,.9) 70%);
+  mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.9) 30%,
+    #000 50%,
+    rgba(0, 0, 0, 0.9) 70%
+  );
   mask-size: 100%;
-  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.9) 30%, #000 50%, rgba(0,0,0,.9) 70%);
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.9) 30%,
+    #000 50%,
+    rgba(0, 0, 0, 0.9) 70%
+  );
   -webkit-mask-size: 200%;
 }
 .active-switch {
@@ -333,59 +384,67 @@ a, a:visited {
   animation: shine 2s linear infinite;
 }
 @keyframes shine {
-  from { -webkit-mask-position: 150%; }
-  to { -webkit-mask-position: -50%; }
+  from {
+    -webkit-mask-position: 150%;
+  }
+  to {
+    -webkit-mask-position: -50%;
+  }
 }
 /* ---------------- switch -------------------- */
-.checkbox_mark{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	outline: none;
+.checkbox_mark {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
 }
-.checkbox_item .checkbox_wrap{
-	position: relative;
-	display: block;
-	cursor: pointer;
-	/* margin: 110px auto 50px; */
+.checkbox_item .checkbox_wrap {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  /* margin: 110px auto 50px; */
 }
 .checkbox_item {
   margin-top: 90px;
 }
-.checkbox_inp{
-	position: absolute;
-	opacity: 0;
+.checkbox_inp {
+  position: absolute;
+  opacity: 0;
 }
-.checkbox_item .checkbox_wrap .checkbox_mark{
-	display: inline-block;
-	position: relative;
-	border-radius: 25px;
+.checkbox_item .checkbox_wrap .checkbox_mark {
+  display: inline-block;
+  position: relative;
+  border-radius: 25px;
 }
-.checkbox_mark:before, .checkbox_item .checkbox_wrap .checkbox_mark:after{
-	content: "";
-	position: absolute;
-	transition: all 0.5s ease;
+.checkbox_mark:before,
+.checkbox_item .checkbox_wrap .checkbox_mark:after {
+  content: "";
+  position: absolute;
+  transition: all 0.5s ease;
 }
-.checkbox_item.citem_2 .checkbox_wrap .checkbox_mark{
-	border: 5px solid rgba(255, 228, 196, 0.8);
-	width: 90px;
-	height: 40px;
-	padding: 2px;
+.checkbox_item.citem_2 .checkbox_wrap .checkbox_mark {
+  border: 5px solid rgba(255, 228, 196, 0.8);
+  width: 90px;
+  height: 40px;
+  padding: 2px;
 }
-.checkbox_item.citem_2 .checkbox_wrap .checkbox_mark:before{
-	top: 2px;
+.checkbox_item.citem_2 .checkbox_wrap .checkbox_mark:before {
+  top: 2px;
   left: 2px;
   width: 34px;
   height: 26px;
   background: rgba(255, 228, 196, 0.8);
   border-radius: 25px;
 }
-.checkbox_item.citem_2 .checkbox_wrap .checkbox_inp:checked ~ .checkbox_mark{
-	border-color: rgba(255, 228, 196, 0.8);
+.checkbox_item.citem_2 .checkbox_wrap .checkbox_inp:checked ~ .checkbox_mark {
+  border-color: rgba(255, 228, 196, 0.8);
 }
-.checkbox_item.citem_2 .checkbox_wrap .checkbox_inp:checked ~ .checkbox_mark:before{
-	left: 44px;
-	background: rgba(255, 228, 196, 0.8);
+.checkbox_item.citem_2
+  .checkbox_wrap
+  .checkbox_inp:checked
+  ~ .checkbox_mark:before {
+  left: 44px;
+  background: rgba(255, 228, 196, 0.8);
 }
 
 /*! Articles section */
@@ -399,9 +458,13 @@ a, a:visited {
 .articles-section__btn-container > * {
   /* width: 40%; */
   /* background-color: rgba(250, 71, 226, 0.251); */
-  background: rgb(210,74,170);
-  background: linear-gradient(140deg, rgba(242,199,220,0.7) 0%, rgba(210,74,170,0.6) 100%);
-  font-family: 'Philosopher', sans-serif;
+  background: rgb(210, 74, 170);
+  background: linear-gradient(
+    140deg,
+    rgba(242, 199, 220, 0.7) 0%,
+    rgba(210, 74, 170, 0.6) 100%
+  );
+  font-family: "Philosopher", sans-serif;
   font-weight: 400;
   font-size: 40px;
   padding: 80px 30px;
@@ -425,14 +488,18 @@ a, a:visited {
   width: 100%;
   /* background-color: rgba(185, 116, 249, 0.3); */
   background: rgba(81, 251, 113, 0.25);
-  background: linear-gradient(90deg, rgba(68, 143, 51, 0.5) 0%, rgba(42, 121, 22, 0.7)100%);
+  background: linear-gradient(
+    90deg,
+    rgba(68, 143, 51, 0.5) 0%,
+    rgba(42, 121, 22, 0.7) 100%
+  );
   border-radius: 10px;
   padding: 25px 0;
   margin-bottom: 20px;
 }
 .articles-section__price-block > * {
   text-align: center;
-  font-family: 'Philosopher', sans-serif;
+  font-family: "Philosopher", sans-serif;
   font-weight: 400;
   padding: 20px 10px;
 }
@@ -446,7 +513,7 @@ a, a:visited {
 }
 
 /* Dialog  */
-dialog{
+dialog {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -482,8 +549,9 @@ dialog::backdrop {
   align-items: center;
   text-align: justify;
 }
-.dialog__title, .dialog__text {
-  font-family: 'Philosopher', sans-serif;
+.dialog__title,
+.dialog__text {
+  font-family: "Philosopher", sans-serif;
   font-weight: 400;
 }
 .dialog__title {
@@ -500,10 +568,27 @@ dialog::backdrop {
 }
 .condition-title {
   padding: 10px;
-  margin-top: 15px;
+  margin: 10px 0;
   text-align: center;
   font-size: 30px;
   color: bisque;
+}
+.conditions-text {
+  line-height: 130%;
+}
+.conditions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  list-style-position: inside;
+  padding-inline-start: 0;
+}
+.conditions li {
+  width: 90%;
+  margin-top: 0px;
+  /* padding-left: 10px; */
 }
 /*! Contact Section */
 .contact-section {
@@ -525,13 +610,14 @@ dialog::backdrop {
   gap: 2vh;
   width: 40%;
 }
-.contact-section__input, .contact-section__textarea {
+.contact-section__input,
+.contact-section__textarea {
   width: 100%;
   padding: 15px;
   border: 2px solid rgb(218, 218, 218);
   border-radius: 10px;
   font-size: 22px;
-  font-family: 'Philosopher', sans-serif;
+  font-family: "Philosopher", sans-serif;
   background-color: rgba(240, 248, 255, 0.8);
   text-align: center;
   outline: none;
@@ -540,7 +626,8 @@ dialog::backdrop {
 .contact-section__textarea {
   height: 15vh;
 }
-.contact-section__input:focus, .contact-section__textarea:focus {
+.contact-section__input:focus,
+.contact-section__textarea:focus {
   border: 2px solid green;
 }
 .contact-section__send-btn {
@@ -554,7 +641,8 @@ dialog::backdrop {
   position: absolute;
   width: 30%;
 }
-.contact-section__send-btn, .contact-section__loader {
+.contact-section__send-btn,
+.contact-section__loader {
   width: 40%;
 }
 .contact-section__loader {
@@ -592,15 +680,16 @@ header {
 .brand:hover {
   cursor: pointer;
   transform: scale(1.01);
-  text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 16px rgba(101, 143, 53, 0.7), 0 0 40px whitesmoke;
+  text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 16px rgba(101, 143, 53, 0.7),
+    0 0 40px whitesmoke;
 }
 .brand__name {
   font-size: 4vh;
-  font-family: 'Philosopher', sans-serif;
+  font-family: "Philosopher", sans-serif;
 }
 .brand__sub {
   font-size: 17px;
-  font-family: 'Philosopher', sans-serif;
+  font-family: "Philosopher", sans-serif;
 }
 nav {
   gap: 2vw;
@@ -612,7 +701,7 @@ nav {
 .link {
   font-size: 20px;
   color: rgb(132, 132, 132);
-  font-family: 'Philosopher', sans-serif;
+  font-family: "Philosopher", sans-serif;
   transition: all 0.3s ease-in-out;
 }
 .link:hover {
@@ -634,7 +723,7 @@ nav {
 }
 
 /*! footer */
-footer{
+footer {
   background-color: bisque;
 }
 .svg-social {
@@ -647,34 +736,37 @@ footer{
   padding: 20px;
   color: grey;
   font-size: 18px;
-  font-family: 'Philosopher', sans-serif;
+  font-family: "Philosopher", sans-serif;
   font-weight: 400;
 }
 
 /*! mobile devices */
 /* laptop starts shrinking. iPad Pro*/
 /* and (min-width: 1050px)  */
-@media screen and (max-width: 1400px) and (orientation: landscape){ 
+@media screen and (max-width: 1400px) and (orientation: landscape) {
   .top-section__text-backdrop {
     height: 100%;
     background-color: rgb(252, 247, 237);
     -webkit-clip-path: polygon(0 0, 50% 0%, 40% 100%, 0% 100%);
     clip-path: polygon(0 0, 55% 0%, 45% 100%, 0% 100%);
   }
-  .top-section__text-big{
+  .top-section__text-big {
     font-size: 40px;
   }
-  .nav-links-container{
+  .nav-links-container {
     margin-left: 12%;
   }
   .values-section__content {
     width: 90%;
     margin-right: 15px;
   }
+  .conditions li {
+    width: 100%;
+  }
 }
 
 /* iPad mini (landscape) */
-@media screen and (max-width: 1400px) and (orientation: landscape) { 
+@media screen and (max-width: 1400px) and (orientation: landscape) {
   .top-section__text-small {
     font-size: 26px;
   }
@@ -691,7 +783,7 @@ footer{
 }
 
 /* iPhone PRO max */
-@media screen and (max-width: 500px) and (orientation: portrait) { 
+@media screen and (max-width: 500px) and (orientation: portrait) {
   .nav-links-container {
     display: none;
   }
@@ -720,7 +812,7 @@ footer{
     border-radius: 0;
     backdrop-filter: blur(4px);
   }
-  .top-section__text > *{
+  .top-section__text > * {
     text-align: center;
   }
   .top-section {
@@ -737,6 +829,7 @@ footer{
     margin-bottom: 20px;
   }
   .top-section__contact-btn {
+    display: none;
     font-size: 20px;
     position: absolute;
     top: -110%;
@@ -802,14 +895,18 @@ footer{
     width: 55px;
     height: 30px;
   }
-  .checkbox_item.citem_2 .checkbox_wrap .checkbox_mark:before{
+  .checkbox_item.citem_2 .checkbox_wrap .checkbox_mark:before {
     width: 16px;
     height: 16px;
   }
-  .checkbox_item.citem_2 .checkbox_wrap .checkbox_inp:checked ~ .checkbox_mark:before{
+  .checkbox_item.citem_2
+    .checkbox_wrap
+    .checkbox_inp:checked
+    ~ .checkbox_mark:before {
     left: 27px;
   }
-  .articles-section__price-title, .articles-section__btn {
+  .articles-section__price-title,
+  .articles-section__btn {
     font-size: 20px;
   }
   .articles-section__price-text {
@@ -848,6 +945,9 @@ footer{
   .dialog__title {
     font-size: 30px;
   }
+  .conditions li {
+    width: 100%;
+  }
 }
 
 /* iPhone PRO, XR */
@@ -862,6 +962,9 @@ footer{
   }
   .top-section__contact-btn {
     top: -100%;
+  }
+  .conditions li {
+    width: 100%;
   }
 }
 
@@ -887,6 +990,9 @@ footer{
   .top-section__text-small {
     font-size: 22px;
     padding-bottom: 25px;
+  }
+  .conditions li {
+    width: 100%;
   }
 }
 

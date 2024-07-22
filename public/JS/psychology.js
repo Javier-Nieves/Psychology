@@ -202,7 +202,7 @@ function showDialog(data) {
   const text = document.querySelector(".dialog__text");
   dialog.showModal();
   if (data == "conditions") {
-    title.innerHTML = "Условия работы";
+    title.innerHTML = "Информированное согласие";
     text.innerHTML = conditionsText;
   }
   if (data == "first") {
