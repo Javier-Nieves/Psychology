@@ -546,7 +546,6 @@ dialog::backdrop {
 .dialog__content {
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: justify;
 }
 .dialog__title,
@@ -555,16 +554,16 @@ dialog::backdrop {
   font-weight: 400;
 }
 .dialog__title {
-  /* position: absolute; */
   color: bisque;
   font-size: 80px;
   margin-bottom: 15px;
+  text-align: center;
 }
 .dialog__text {
   color: whitesmoke;
   font-size: 20px;
   line-height: 25px;
-  width: 95%;
+  width: 100%;
 }
 .condition-title {
   padding: 10px;
@@ -575,6 +574,7 @@ dialog::backdrop {
 }
 .conditions-text {
   line-height: 130%;
+  word-wrap: break-word;
 }
 .conditions {
   display: flex;
