@@ -213,3 +213,12 @@ function showDialog(data) {
     dialog.close();
   });
 }
+
+// Google tag (gtag.js)
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag("js", new Date());
+
+gtag("config", "G-GK1WF4MTPY");

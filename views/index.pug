@@ -1,23 +1,25 @@
 mixin valueBlock(title, text)
   .flex-container.values-section__wrapper
-    img.value-point(src="https://img.icons8.com/flat-round/64/leaf.png" alt="leaf")
+    img.value-point(src="https://img.icons8.com/flat-round/64/leaf.png" alt="психолог-консультант онлайн")
     .flex-column.values-section__value-container
       .values-section__value-title= title
       .values-section__value-text= text
 
 mixin topicBlock(img, text)
   .flex-column.topics-section__topic-container
-    img(src=`/img/${img}` class="topics-section__topic-pic")
-    .topics-section__topic-text= text 
+    img(src=`/img/${img}` class="topics-section__topic-pic" alt=`${text}`)
+    h2.topics-section__topic-text= text 
 
 doctype html
 html
   head
     title Ирина Никольская, психолог-консультант
     meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+    meta(name="description" content="Профессиональный онлайн психолог консультант, предлагающий психотерапию для взрослых и подростков. Когнитивно-поведенческая терапия, КПТ. Поддержка ментального здоровья, преодолеть эмоциональные трудности, наладить отношения с близкими, решить проблемы в учебе, сформировать адекватную самооценку")
+    meta(name="keywords" content="online, онлайн, психолог, терапевт, консультант, подростки, взрослые, ментальное здоровье, онлайн консультирование, КПТ, Когнитивно-поведенческая терапия, психотерапия, трудности, депрессия, фобия, кризис, выгорание, тревога, сессия, не дорого, Москва, Петербург, Европа, Испания, поддержка, стресс, важное решение, эмоции, отношения с близкими, самооценка, возрастные изменения, поведение, учеба")
+    link(rel="canonical" href="https://nikolskaya.org")
     //- <!-- Include Lottie Library -->
     script(src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js")
-    link(rel="canonical" href="https://nikolskaya.org")
     link(href="css/styles.css" rel="stylesheet")
     link(href="img/favicon.png" rel="icon")
     //- Axios CDN - the way to import axios without bundlers:
@@ -45,23 +47,22 @@ html
 
     .flex-column.content
       .section.top-section
-        img(src="img/mainBack.jpg" alt="Main photo" class="top-section__photo")
+        img(src="img/mainBack.jpg" alt="Психолог КПТ Ирина Никольская" class="top-section__photo")
         .top-section__text-backdrop
         .lottie-leaves
         .top-section__text
-          .top-section__text-big Практикующий психолог
-          .top-section__text-small Когнитивно-поведенческая терапия
-          .top-section__text-small Для взрослых и подростков
+          h1.top-section__text-big Практикующий психолог
+          h2.top-section__text-small Когнитивно-поведенческая терапия
+          h2.top-section__text-small Для взрослых и подростков
           button.top-section__contact-btn Хочу на консультацию
 
       .section.flex-column.self-section
         .section-title.self-section__title Обо мне
         .flex-container.self-section__content
-          //- img(src="/img/photo2.jpg" alt="my photo here" class="self-section__photo")
           .flex-column.self-section__text-container
             .self-section__small-text.first-line О чем вы думаете, когда вам радостно? А когда тревожно или грустно? Источник наших эмоциональных состояний - в том, как мы мыслим.
             .self-section__small-text Меня зовут Ирина, я - практикующий психолог, консультирую онлайн с 2022 г. 
-            .self-section__small-text Провела 400+ сессий. Меня вдохновляет, что клиенты видят позитивные изменения в своей жизни. Люблю свою работу и чувствую, что я на своем месте.
+            .self-section__small-text Провела 500+ сессий. Меня вдохновляет, что клиенты видят позитивные изменения в своей жизни. Люблю свою работу и чувствую, что я на своем месте.
             .self-section__small-text Чтобы оказывать профессиональную помощь, я постоянно учусь и повышаю  квалификацию, нахожусь в личной терапии и регулярно посещаю супервизии.
             .self-section__small-text Работаю в когнитивно-поведенческом подходе. КПТ - один из самых исследованных и эффективных методов психотерапии. На сессиях вы узнаете, как мысли меняют наше настроение, и научитесь менять те убеждения, которые негативно влияют на вашу жизнь. 
             .self-section__small-text Если хотите улучшить свое психологическое состояние, приходите на консультацию!
@@ -125,7 +126,7 @@ html
       .section.flex-column.contact-section
         .section-title.contact-section__title Напишите мне:
         .flex-container.contact-section__container
-          img(src="/img/photo2.jpg" alt="my photo here" class="contact-section__photo")
+          img(src="/img/photo2.jpg" alt="терапия психология консультирование онлайн для взрослых и подростков" class="contact-section__photo")
           form(id="contact-form" class="flex-column")
             input(type="text" id='contact-name' class="contact-section__input" placeholder="Ваше Имя" required)
             input(type="email" id='contact-email' class="contact-section__input" placeholder="Ваша Почта" required)
@@ -138,3 +139,4 @@ html
       .footer-text Ирина Никольская, психолог-консультант. Все права защищены. 2022 - 2024
 
 script(type="module" src="JS/psychology.js")
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GK1WF4MTPY"></script>
